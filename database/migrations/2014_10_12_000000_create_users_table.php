@@ -21,36 +21,15 @@ class CreateUsersTable extends Migration
             $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password', 60);
-            // $table->string('sec_question_id', 100);
+            $table->string('sec_question', 100);
             $table->string('sec_answer', 100);
             $table->string('avatar', 255);
-            //$table->string('sales_id');
             $table->tinyInteger('isAdmin')->default(0);
             $table->rememberToken();
-            $table->timestamps();
+            //$table->string('purchases_id');
+            //$table->string('sec_question_id', 100);
 
         });
-
-
-        Schema::create('Address', function (Blueprint $table) {
-            $table->BigIncrements('id');
-            $table->string('street_address', 100);
-            $table->string('city', 50);
-            $table->string('state', 50);
-            $table->string('country', 50);
-            $table->unsignedInteger('zip_code');
-            $table->timestamps();
-
-        });
-
-        Schema::create('Question', function (Blueprint $table) {
-            $table->BigIncrements('id');
-            $table->string('question', 100);
-            //$table->string('user_id');
-            $table->timestamps();
-
-        });
-
 
         Schema::create('Product', function (Blueprint $table) {
             $table->BigIncrements('id');
@@ -63,47 +42,30 @@ class CreateUsersTable extends Migration
 
         Schema::create('Cart', function (Blueprint $table) {
             $table->BigIncrements('id');
-            // $table->unsignedInteger('user_id');
-            // $table->unsignedInteger('product_id');
             $table->unsignedInteger('quantity');
             $table->timestamps();
-        });
-
-
-        Schema::create('Purchases', function (Blueprint $table) {
-            $table->BigIncrements('id');
-            $table->integer('Test');
-            // $table->string('user_id');
-            $table->timestamps();
+            // $table->unsignedInteger('user_id');
+            // $table->unsignedInteger('product_id');
         });
 
 
 
-        Schema::create('Ticket', function (Blueprint $table) {
-            $table->BigIncrements('id');
-            $table->unsignedInteger('ticket_number');
-            // $table->string('user_id');
-            $table->timestamps();
-        });
 
 
-        Schema::create('Discount', function (Blueprint $table) {
-            $table->BigIncrements('id');
-            $table->string('percentage');
-            $table->string('credit_cards');
-            // $table->string('user_id');
-            $table->timestamps();
-        });
-
-
-        Schema::create('Product_Purchases', function (Blueprint $table) {
+        Schema::create('Cart_Purchases', function (Blueprint $table) {
             $table->BigIncrements('id');
             $table->string('price');
             $table->unsignedInteger('quantity');
+            $table->timestamps();
             // $table->string('purchase_id');
             // $table->string('product_id');
-            $table->timestamps();
 
+                });
+
+        Schema::create('Cart_detail', function (Blueprint $table) {
+                    $table->BigIncrements('id');
+                    $table->unsignedInteger('State');
+                    $table->timestamps();
                 });
 
     }
@@ -116,14 +78,10 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('User');
-        Schema::dropIfExists('Address');
-        Schema::dropIfExists('Question');
         Schema::dropIfExists('Product');
         Schema::dropIfExists('Cart');
-        Schema::dropIfExists('Ticket');
-        Schema::dropIfExists('Discount');
-        Schema::dropIfExists('Purchases');
-        Schema::dropIfExists('Product_Purchases');
+        Schema::dropIfExists('Cart_Purchases');
+        Schema::dropIfExists('Cart_detail');
 
     }
 }
