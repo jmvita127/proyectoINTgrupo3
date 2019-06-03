@@ -11,6 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+      //$this->call(SeederDeProducts::class);
+
+//       DB::table("Products")->insert( //insert manual, para agregar generos en peliculas por ejemplo
+//         [
+//           "name" => "Importado",
+//           "stock" => 10
+//         ]
+//       );
+
+      factory(App\Product::class, 30)->create(); //va a crear 30 peliculas
+
     }
 }
