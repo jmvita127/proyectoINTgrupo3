@@ -1,10 +1,10 @@
 <?php
 
-Route::get('/create/validate', 'ProductController@save');
+Route::get('/create', 'ProductController@create');
+
+Route::post('/create/validate', 'ProductController@save');
 
 Route::get('/products', 'ProductController@index');
-
-Route::get('/create', 'ProductController@create');
 
 Route::get('/index', 'IndexController@home');
 

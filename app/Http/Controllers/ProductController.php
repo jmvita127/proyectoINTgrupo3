@@ -10,6 +10,7 @@ class ProductController extends Controller
     public function index()
     {
       $products = Product::all();
+
       return view('listadoProducts')->with(['products' => $products]);
     }
 
@@ -22,7 +23,7 @@ class ProductController extends Controller
     {
       $this->validate($request,
       [
-        'name' => 'required|unique:products',
+        'name' => 'required|unique:Products',
         'price' => 'required|numeric',
         'stock' => 'required|numeric',
         'description' => 'required',
@@ -38,6 +39,7 @@ class ProductController extends Controller
         'description.required' => 'Completar descripcion',
 
       ]);
+
       Product::create(
         [
           'name' => $request->input('name'),
@@ -47,7 +49,7 @@ class ProductController extends Controller
         ]
       );
 
-      return redirect('/products')->with('mensaje', 'Producto guardado exitosamente!');
+      return redirect('/products');
     }
 
 }
