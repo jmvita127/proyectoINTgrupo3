@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+      $products = Product::all();
+      return view('listadoProducts')->with(['products' => $products]);
+    }
+
     public function create()
     {
       return view('create');
@@ -31,6 +38,16 @@ class ProductController extends Controller
         'description.required' => 'Completar descripcion',
 
       ]);
+      Product::create(
+        [
+          'name' => $request->input('name'),
+          'price' => $request->input('price'),
+          'stock' => $request->input('stock'),
+          'description' => $request->input('description'),
+        ]
+      );
 
+      return redirect('/products')->with('mensaje', 'Producto guardado exitosamente!');
     }
+
 }
