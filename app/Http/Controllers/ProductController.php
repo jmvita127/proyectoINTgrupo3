@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\User;
 
 class ProductController extends Controller
 {
@@ -18,6 +19,34 @@ class ProductController extends Controller
     {
       return view('create');
     }
+
+    public function edit($id)
+   {
+     $cosa = Product::find($id);
+
+       return view('edit')->with([
+           'product' => $cosa
+         ]);
+   }
+
+   public function update($id, Request $request)
+   {
+     $this->validate($request,
+       [
+         'name'=>'required',
+       ],
+       [
+         'required' => 'Campo obligatorio',
+       ]);
+       $productoAEditar = Product::find($id);
+        //le cambio los atributos o valores al objeto que me traje arriba
+        $productoAEditar->name = $request->name;
+
+        //lo mando a guardar
+        $productoAEditar->save();
+
+    }
+
 
     public function save(Request $request)
     {
@@ -51,5 +80,12 @@ class ProductController extends Controller
 
       return redirect('/products');
     }
+
+    public function showCart()
+    {
+      return view('cart');
+    }
+
+    
 
 }

@@ -7,4 +7,12 @@
 
 @foreach ($products as $product)
   {{$product->name}}<br>
+
+  <form class="" action="/carrito/{id}" method="post">
+    @csrf
+
+    <input type="submit" name="" value="addToCart">
+
+  </form>
+
 @endforeach
