@@ -9,7 +9,7 @@
     <h1>Agregar Producto</h1>
     <div class="">
 
-      <form class="" action="/create/validate" method="post">
+      <form class="" action="/create/validate" method="post" enctype="multipart/form-data">
        @csrf
         <label for="name">Nombre</label>
         <input type="text" name="name" id="name" value=""><br>
@@ -31,6 +31,11 @@
         @error('description')
            <div class="alert alert-danger">{{ $message }}
        @enderror</div>
+       <label for="imagen">IMAGEN</label>
+       <input type="file" name="imagen" id="imagen" value=""><br>
+       @error('name')
+          <div class="alert alert-danger">{{ $message }}
+      @enderror</div>
         <button type="submit" class="btn btn-success">Guardar Cambios</button>
 
       </form>

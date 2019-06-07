@@ -5,6 +5,19 @@
 
 }
 
+.productos {
+  color: orange;
+  display: block;
+  padding: 0 2.5em;
+  transition: 0.4s;
+  font-size: 2em;
+
+}
+
+.imagen-productos {
+  width:20%;
+}
+
 .bienvenida {
   color: ghostwhite;
   text-align: center;

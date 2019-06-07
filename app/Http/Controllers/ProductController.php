@@ -10,7 +10,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-      $products = Product::all();
+      $products = Product::paginate(9);
+
+      //$products = Product::all();
 
       return view('listadoProducts')->with(['products' => $products]);
     }
@@ -56,6 +58,7 @@ class ProductController extends Controller
         'price' => 'required|numeric',
         'stock' => 'required|numeric',
         'description' => 'required',
+        'imagen' => 'required|image',
       ],
 
       [
@@ -66,8 +69,13 @@ class ProductController extends Controller
         'stock.required' => 'Completar cantidad del proucto',
         'stock.numeric' => 'Ingrese solo numeros',
         'description.required' => 'Completar descripcion',
+        'imagen.image' => 'Exension no valida como Imagen',
 
       ]);
+
+        $path= $request->file('imagen')->store('public');
+        $imagen= basename($path);
+
 
       Product::create(
         [
@@ -75,17 +83,21 @@ class ProductController extends Controller
           'price' => $request->input('price'),
           'stock' => $request->input('stock'),
           'description' => $request->input('description'),
+          'imagen'=> $imagen,
+
         ]
       );
 
       return redirect('/products');
     }
 
+
+
     public function showCart()
     {
       return view('cart');
     }
 
-    
+
 
 }
