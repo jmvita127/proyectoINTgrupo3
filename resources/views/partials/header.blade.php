@@ -47,36 +47,29 @@
         <li class="carrito">
           <img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30">
         </li>
-        <?php
-        if(!empty($_SESSION['email'])){
-        ?>
+        @auth
 
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:orange;">Bienvenido, <img class="avatar" src= <?php echo $_SESSION['avatar'] ?> alt=""> <br><?php  echo $_SESSION['email']?></button></a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="exito.php" style="color:red;">Perfil</a>
-            <a class="dropdown-item" href="cerrarSession.php" style="color:red;">Log out</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:orange;">Bienvenido, <img class="avatar" src=  alt=""> <br> {{Auth::User()->name}}  </button></a> <img src="" alt="">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="exito.php" style="color:red;">Perfil</a>
+              <a class="dropdown-item" href="cerrarSession.php" style="color:red;">Log out</a>
 
-          </div>
-        </li>
-
-
-       <?php
-        } else {
-          ?>
+            </div>
+          </li>
+        @endauth
+{{Auth::User()->avatar}}
+        @guest
           <li class="boton">
             <button class="btn" type="submit"></button><br>
-            <a class="botonreg" href="registro"><button type="button" class="btn btn-outline-danger">REGISTRARSE</button></a>
+            <a class="botonreg" href="register"><button type="button" class="btn btn-outline-danger">REGISTRARSE</button></a>
             <a href="login"> <button type="button" class="btn btn-outline-warning">LOG-IN</button></a>
 
 
-          </li>       <?php } ?>
+          </li>
 
-
-
-
-      </div>
-
+        </div>
+      @endguest
 
     </nav>
   </header>

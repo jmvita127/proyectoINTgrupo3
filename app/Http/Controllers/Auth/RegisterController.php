@@ -50,8 +50,16 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar' => ['nullable', 'image', 'max:255'],
+            'sec_question' => ['nullable', 'string', 'max:255'],
+            'sec_answer' => ['nullable', 'string', 'max:255'],
+            'updated_at' => ['nullable', 'string', 'max:255'],
+            'created_at' => ['nullable', 'string', 'max:255'],
+            'isAdmin' => ['nullable']
+
         ]);
     }
 
@@ -63,10 +71,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+      //dd($data);
+  $nombreArchivo = 'user_default.jpg';
+  //debemos tener en cuenta que si hay nun archivo, lo subimos y le guardamos la ruta
+  if(isset($data['avatar'])){
+    //al archivo que subi lo voy a guardar en el filesystem de laravel
+    $rutaDelArchivo = $data['avatar']->store('public');
+    //le saco solo el nombre
+    $nombreArchivo = basename($rutaDelArchivo);
+  }
+    return User::create([
+        'name' => $data['name'],
+        'last_name' => $data['last_name'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password']),
+        'avatar' => $nombreArchivo,
+    ]);
     }
 }
