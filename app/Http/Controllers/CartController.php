@@ -15,4 +15,12 @@ class CartController extends Controller
     return redirect ('/carrito/');
 
   }
-}
+
+    public function agregar (Request $req)
+    {
+
+      $user = Auth:user();
+      $product_id = $req->product_id;
+      $user->comprados()->attach(product_id);
+
+    }

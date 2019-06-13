@@ -19,7 +19,7 @@
   <header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="NISA" href="index.php"></a><h1>NISA <a href="index.php"><img class="logo" src="/imagenes/logo.jpg" alt="logo" witdh="100" height="110"></a></h1>
+      <a class="NISA" href="index"></a><h1>NISA <a href="index"><img class="logo" src="/imagenes/logo.jpg" alt="logo" witdh="100" height="110"></a></h1>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,20 +50,34 @@
         @auth
 
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:orange;">Bienvenido, <img class="avatar" src=  alt=""> <br> {{Auth::User()->name}}  </button></a> <img src="" alt="">
+            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:orange;">Bienvenido, <img class="avatar" src="/storage/{{Auth::User()->avatar}}" alt=""> <br> {{Auth::User()->name}} </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="exito.php" style="color:red;">Perfil</a>
-              <a class="dropdown-item" href="cerrarSession.php" style="color:red;">Log out</a>
+              <a class="dropdown-item" href="exito" style="color:red;">Perfil</a>
+
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"
+                   {{ __('Logout') }}
+               style="color:red;">Log out</a>
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                   @csrf
+
+               </form>
+
 
             </div>
           </li>
+
+
+
+
         @endauth
-{{Auth::User()->avatar}}
+
         @guest
           <li class="boton">
             <button class="btn" type="submit"></button><br>
             <a class="botonreg" href="register"><button type="button" class="btn btn-outline-danger">REGISTRARSE</button></a>
-            <a href="login"> <button type="button" class="btn btn-outline-warning">LOG-IN</button></a>
+            <a href="login"> <button type="button" class="btn btn-outline-warning">INGRESAR</button></a>
 
 
           </li>

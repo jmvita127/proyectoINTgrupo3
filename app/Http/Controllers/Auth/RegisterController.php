@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/exito';
 
     /**
      * Create a new controller instance.
@@ -87,5 +87,10 @@ class RegisterController extends Controller
         'password' => Hash::make($data['password']),
         'avatar' => $nombreArchivo,
     ]);
+    }
+
+    public function showRegistrationForm()
+    {
+      return  view('registro');
     }
 }
