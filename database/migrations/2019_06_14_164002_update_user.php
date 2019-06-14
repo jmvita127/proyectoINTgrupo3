@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CampoTimestampUsers extends Migration
+class UpdateUser extends Migration
 {
     /**
      * Run the migrations.
@@ -14,18 +14,14 @@ class CampoTimestampUsers extends Migration
     public function up()
     {
 
-      Schema::table('Users', function (Blueprint $table) {
-        $table->dropColumn('avatar');
-      });
 
       Schema::table('Users', function (Blueprint $table) {
           $table->timestamps();
+          $table->string('avatar', 255)->nullable();
           $table->string('sec_question', 100)->nullable();
           $table->string('sec_answer', 100)->nullable();
-          $table->string('avatar', 255)->nullable();
 
       });
-
     }
 
     /**
@@ -36,8 +32,10 @@ class CampoTimestampUsers extends Migration
     public function down()
     {
       Schema::table('Users', function (Blueprint $table) {
-          $table->dropColumn('created_at', 'updated_at');
-          $table->dropColumn('sec_answer', 'sec_question', 'avatar');
+          $table->dropColumn('created_at','updated_at');
+          $table->dropColumn('avatar');
+          $table->dropColumn('sec_question');
+          $table->dropColumn('sec_answer');
 
       });
     }

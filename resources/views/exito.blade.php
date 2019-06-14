@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h3 class="bienvenida">Bienvenido, {{Auth::User()->name}} <img src="/storage/{{Auth::User()->avatar}}" alt="" class="avatar">
+<h3 class="bienvenida">Bienvenido, {{Auth::User()->name}}<img src="/storage/{{Auth::User()->avatar}}" alt="" class="avatar">
 <br><a class="perfil" href="index" style="margin: auto ">INICIO</a><br>
 <a class="perfil" href=href="{{ route('logout') }}"
     onclick="event.preventDefault();

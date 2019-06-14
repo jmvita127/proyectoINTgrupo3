@@ -1,15 +1,20 @@
+@extends('plantilla.plantilla')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/estilo/estiloform.css">
+    <link rel="stylesheet" href="/css/estilo/estilo.css">
     <title></title>
   </head>
   <body>
-    <h1>Agregar Producto</h1>
-    <div class="">
-
-      <form class="" action="/create/validate" method="post" enctype="multipart/form-data">
+    <div class="form-header">
+      <h2 class="form-title">C<span>rear</span> P<span>roducto</span> </h2>
+    </div>
+    <div class="contenedor">
+      <form class="formulariogrande" action="/create/validate" method="post" enctype="multipart/form-data">
        @csrf
         <label for="name">Nombre</label>
         <input type="text" name="name" id="name" value=""><br>
@@ -43,3 +48,4 @@
     </div>
   </body>
 </html>
+@endsection

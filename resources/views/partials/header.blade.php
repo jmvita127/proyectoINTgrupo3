@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Negocios Informático</title>
+  <title>Negocios Informáticos</title>
 </head>
 <body>
 
@@ -25,20 +25,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-
           <li class="nav-item active">
             <a class="nav-link" href="index" style="color:orange;">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:orange;">PRODUCTOS</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="equipos" style="color:orange;">EQUIPOS</a>
-              <a class="dropdown-item" href="consolas" style="color:orange;">CONSOLAS</a>
+              <a class="dropdown-item" href="products" style="color:orange;">EQUIPOS</a>
+              <a class="dropdown-item" href="products" style="color:orange;">CONSOLAS</a>
             </div>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="quienesSomos" style="color:orange;">¿QUIENES SOMOS? <span class="sr-only">(current)</span></a>
-          </li>
+        </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0" id="buscador">

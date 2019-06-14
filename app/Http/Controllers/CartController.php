@@ -12,15 +12,16 @@ class CartController extends Controller
 
     $user->carrito()->attach($request->product_id, ['quantity=>1']);
 
-    return redirect ('/carrito/');
+    return redirect ('cart');
 
   }
 
     public function agregar (Request $req)
     {
 
-      $user = Auth:user();
+      $user = Auth::user();
       $product_id = $req->product_id;
       $user->comprados()->attach(product_id);
 
     }
+}
