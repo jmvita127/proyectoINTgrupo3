@@ -48,7 +48,7 @@
       <p class="card-text">Precio: ${{$product->price}}</p>
       <p class="card-text">Stock: {{$product->stock}}</p>
       @auth
-      <a href="create" class="btn btn-danger">Editar Producto</a>
+      <a href="/product/edit/{{$product->id}}" class="btn btn-danger">Editar Producto</a>
       <a href="" class="btn btn-success"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></a>
       @endauth
       @guest

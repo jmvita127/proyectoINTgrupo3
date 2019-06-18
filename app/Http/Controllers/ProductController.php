@@ -26,9 +26,7 @@ class ProductController extends Controller
    {
      $cosa = Product::find($id);
 
-       return view('edit')->with([
-           'product' => $cosa
-         ]);
+       return view('edit')->with(['product' => $cosa]);
    }
 
    public function update($id, Request $request)
@@ -36,17 +34,34 @@ class ProductController extends Controller
      $this->validate($request,
        [
          'name'=>'required',
+         'price' => 'required|numeric',
+         'stock' => 'required|numeric',
+         'description' => 'required',
+         'imagen' => 'required|image',
        ],
        [
-         'required' => 'Campo obligatorio',
+         'name.required' => 'El nombre es obligatorio',
+         'name.unique' => 'El nombre ya existe',
+         'price.required' => 'El precio es obligatorio',
+         'price.numeric' => 'Ingrese solo numeros',
+         'stock.required' => 'Completar cantidad del proucto',
+         'stock.numeric' => 'Ingrese solo numeros',
+         'description.required' => 'Completar descripcion',
+         'imagen.image' => 'Extension no valida como Imagen',
+         'imagen.required' => 'La imagen es obligatoria',
        ]);
        $productoAEditar = Product::find($id);
         //le cambio los atributos o valores al objeto que me traje arriba
         $productoAEditar->name = $request->name;
+        $productoAEditar->price = $request->price;
+        $productoAEditar->stock = $request->stock;
+        $productoAEditar->description = $request->description;
+        $productoAEditar->imagen = $request->imagen;
 
         //lo mando a guardar
         $productoAEditar->save();
 
+        return redirect('/products');
     }
 
 
@@ -62,14 +77,15 @@ class ProductController extends Controller
       ],
 
       [
-        'name.required' => 'El nombre es Obligatorio',
+        'name.required' => 'El nombre es obligatorio',
         'name.unique' => 'El nombre ya existe',
-        'price.required' => 'El precio es Obligatorio',
+        'price.required' => 'El precio es obligatorio',
         'price.numeric' => 'Ingrese solo numeros',
         'stock.required' => 'Completar cantidad del proucto',
         'stock.numeric' => 'Ingrese solo numeros',
         'description.required' => 'Completar descripcion',
-        'imagen.image' => 'Exension no valida como Imagen',
+        'imagen.image' => 'Extension no valida como Imagen',
+        'imagen.required' => 'La imagen es obligatoria',
 
       ]);
 

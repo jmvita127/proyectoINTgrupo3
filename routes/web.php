@@ -4,9 +4,9 @@ Route::get('/create', 'ProductController@create')->middleware('auth');
 
 Route::post('/create/validate', 'ProductController@save')->middleware('auth');
 
-Route::post('/products/edit/{id}', 'ProductController@update')->middleware(['auth', 'admin']);
+Route::post('/product/edit/{id}', 'ProductController@update')->middleware('auth');
 
-Route::get('/products/edit/{id}', 'ProductController@edit')->middleware(['auth', 'admin']);
+Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('auth');
 
 
 

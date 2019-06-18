@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Iluminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class Administrator
 {
@@ -18,7 +18,7 @@ class Administrator
     {
          if(!Auth::user()->is_admin)
          {
-           return redirect('/home');
+           return redirect('/index');
          }
 
 
