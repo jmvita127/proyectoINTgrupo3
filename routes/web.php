@@ -8,6 +8,9 @@ Route::post('/product/edit/{id}', 'ProductController@update')->middleware('auth'
 
 Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('auth');
 
+Route::get('/deleteProduct/{id}', 'ProductController@show')->middleware('auth');
+Route::post('/deleteProduct/{id}', 'ProductController@delete')->middleware('auth');
+
 
 
 

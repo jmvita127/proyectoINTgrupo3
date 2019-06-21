@@ -114,6 +114,26 @@ class ProductController extends Controller
       return view('cart');
     }
 
+    public function show($id)
+   {
+     $productoAEliminar = Product::find($id);
+
+       return view('deleteProduct')->with(['product' => $productoAEliminar]);
+   }
+
+    public function delete(Request $request)
+    {
+      $id = $request['id'];
+
+      $productoAEliminar = Product::find($id);
+
+      $productoAEliminar->delete();
+
+      return redirect('/products')->with('mensaje', 'Producto eliminado exitosamente!');
+
+    }
+
+
 
 
 }

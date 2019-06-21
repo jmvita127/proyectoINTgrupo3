@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -12,16 +14,8 @@ class CartController extends Controller
 
     $user->carrito()->attach($request->product_id, ['quantity=>1']);
 
-    return redirect ('cart');
+    return redirect ('cart')->with('mensaje', 'Producto agregado exitosamente!');
 
   }
 
-    public function agregar (Request $req)
-    {
-
-      $user = Auth::user();
-      $product_id = $req->product_id;
-      $user->comprados()->attach(product_id);
-
-    }
 }
