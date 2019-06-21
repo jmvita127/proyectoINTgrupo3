@@ -62,5 +62,4 @@
 </div>
 {{$products->links()}}
 
-
 @include('partials.footer')

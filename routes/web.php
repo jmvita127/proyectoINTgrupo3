@@ -27,16 +27,13 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 
 Route::post('cerrarSesion', 'Auth\LoginController@logout')->name('logout');
 
-
-
-
-
 // RUTAS GENERALES //
 Route::get('/carrito', 'CartController@showCart');
 
 Route::post('/carrito/{id}', 'CartController@addToCart');
 
 Route::get('/products', 'ProductController@index');
+Route::get('/products', 'ProductController@search');
 
 Route::get('/index', 'IndexController@home');
 

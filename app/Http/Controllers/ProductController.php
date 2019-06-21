@@ -139,7 +139,13 @@ class ProductController extends Controller
 
     }
 
-
-
-
+    public function search()
+    {
+      if(isset($_GET['name'])){
+       $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate();
+     } else{
+       $products = Product::paginate();
+     }
+       return view('listadoProducts')->with( [ 'products' => $products] );
+    }
 }

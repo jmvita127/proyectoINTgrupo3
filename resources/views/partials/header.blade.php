@@ -40,9 +40,13 @@
         </li>
 
         </ul>
-        <form class="form-inline my-2 my-lg-0" id="buscador">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar Producto" aria-label="Search">
+        <form action="/products" class="form-inline my-2 my-lg-0" id="buscador" method="get">
+          <input class="form-control mr-sm-2" type="text" name="name" placeholder="Buscar Producto" aria-label="Search">
+          <button type="submit" class="btn btn-primary">Buscar</button>
         </form>
+
+
+
         <li class="carrito">
           <img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30">
         </li>
