@@ -1,35 +1,31 @@
 @include('partials.header')
 
- <div class="form-header">
-   <h2 class="form-title">E<span>liminar</span> P<span>roducto</span> </h2>
- </div>
- <div class="contenedor">
-   <form class="formulariogrande" action="" method="post" enctype="multipart/form-data">
-    @csrf
-     <label for="name">Nombre</label>
-     <input type="text" name="name" id="name" value="{{old('name', $product->name)}}"><br>
-     @error('name')
-        <div class="alert alert-danger">{{ $message }}</div>
-    @enderror <br>
-     <label for="price">Precio</label>
-     <input type="number" name="price" id="price" value="{{old('price', $product->price)}}"><br>
-     @error('price')
-        <div class="alert alert-danger">{{ $message }}</div>
-    @enderror <br>
-     <label for="stock">Stock</label>
-     <input type="number" name="stock" id="stock" value="{{old('stock', $product->stock)}}"><br>
-     @error('stock')
-        <div class="alert alert-danger">{{ $message }}</div>
-    @enderror <br>
-     <label for="description">Descripcion</label>
-     <textarea name="description" id="description" rows="8" cols="40"></textarea><br>
-     @error('description')
-        <div class="alert alert-danger">{{ $message }}</div>
-    @enderror <br>
+<br>
+<div class="form-header">
+  <h2 class="form-title">E<span>liminar</span> P<span>roducto</span> </h2>
+</div>
 
-      {{-- <input type="hidden" name="id" value="{{$product->id}}"> --}}
-      <button type="submit" name="button" class="btn btn-danger">Eliminar Producto</button>
-  </form>
-
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-12">
+  <div class="card text-white bg-dark mb-3"
+  style="
+    text-align: center;
+    max-width: 35rem;
+    margin: auto;
+    padding-left: 0px;
+    padding-top: 10px;
+    ">
+    <a name="quienes">
+      <img src="/storage/{{$product->imagen}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style="font-family: 'Orbitron', sans-serif;
+      font-weight: bold;">{{$product->name}}</h5>
+      <p class="card-text">{{$product->description}}</p>
+      <p class="card-text">Precio: ${{$product->price}}</p>
+      <p class="card-text">Stock: {{$product->stock}}</p>
+      @auth
+        <br>
+      <a href="/deleteProduct/{{$product->id}}" class="btn btn-danger">Eliminar</a>
+      @endauth
 
  </div>

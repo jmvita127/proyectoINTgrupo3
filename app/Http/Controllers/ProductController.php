@@ -135,7 +135,7 @@ class ProductController extends Controller
 
       $productoAEliminar->delete();
 
-      return redirect('/products')->with('mensaje', 'Producto eliminado exitosamente!');
+      return redirect('/products');
 
     }
 
