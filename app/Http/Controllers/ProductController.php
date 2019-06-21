@@ -24,6 +24,7 @@ class ProductController extends Controller
 
     public function edit($id)
    {
+
      $cosa = Product::find($id);
 
        return view('edit')->with(['product' => $cosa]);
@@ -50,13 +51,18 @@ class ProductController extends Controller
          'imagen.image' => 'Extension no valida como Imagen',
          'imagen.required' => 'La imagen es obligatoria',
        ]);
+
+       $path= $request->file('imagen')->store('public');
+       $imagen= basename($path);
+
+
        $productoAEditar = Product::find($id);
         //le cambio los atributos o valores al objeto que me traje arriba
         $productoAEditar->name = $request->name;
         $productoAEditar->price = $request->price;
         $productoAEditar->stock = $request->stock;
         $productoAEditar->description = $request->description;
-        $productoAEditar->imagen = $request->imagen;
+        $productoAEditar->imagen = $imagen;
 
         //lo mando a guardar
         $productoAEditar->save();

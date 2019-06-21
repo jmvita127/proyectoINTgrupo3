@@ -27,7 +27,7 @@
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror <br>
     <label for="imagen">IMAGEN</label>
-    <input type="file" name="imagen" id="imagen" value="{{old('imagen')}}"><br>
+    <input type="file" name="imagen" id="imagen" value="{{old('imagen', $product->imagen)}}"><br>
     @error('imagen')
        <div class="alert alert-danger">{{ $message }}</div>
    @enderror <br>
