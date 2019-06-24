@@ -11,10 +11,6 @@ Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('auth');
 Route::get('/deleteProduct/{id}', 'ProductController@show')->middleware('auth');
 Route::post('/deleteProduct/{id}', 'ProductController@delete')->middleware('auth');
 
-
-
-
-
 // RUTAS CON AUTH / LOGEO //
 Auth::routes();
 
@@ -49,8 +45,9 @@ Route::get('/quienesSomos', 'QuienesSomosController@quienesSomos'); // Tambien r
 
 Route::get('/libroDeQuejas', 'LibroDeQuejasController@libroDeQuejas');
 
+//porque nos estamos confundiendo mucho entre index y home:
 
-
+Route::get('/home', 'IndexController@home');
 
 
 // RUTEO HOME LARAVEL

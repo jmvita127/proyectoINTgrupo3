@@ -1,6 +1,11 @@
 @extends('plantilla.plantilla')
 
 @section('content')
+
+@auth
+<h1> ya estas registrado</h1>
+@endauth
+
 <div class="contenedor">
   <form class="formulariogrande" action="" method="post" enctype="multipart/form-data">
     @csrf

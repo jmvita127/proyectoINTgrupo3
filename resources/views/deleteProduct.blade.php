@@ -6,7 +6,7 @@
 <div class="contenedor">
   <form class="formulariogrande" action="" method="post" enctype="multipart/form-data">
    @csrf
-<div class="prueba1">Vas a borrar:</h2> <h4>{{old('name', $product->name)}}"></h4>
+<div class="prueba1">Vas a borrar:</h2> <h4>{{old('name', $product->name)}}</h4>
  <br>
      <button type="submit" name="button" class="btn btn-danger">Eliminar Producto</button>
  </form>

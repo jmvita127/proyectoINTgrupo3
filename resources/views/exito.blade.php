@@ -16,6 +16,12 @@
  </form>
 </a></h3>
 
+@if (Auth::user()->isAdmin)
+<h3>SOS ADMIN</h1>
+@else
+<h3>NO SOS ADMIN</h3>
+@endif
+
 <div class="alert alert-success alert-dismissible fade show" id="cartel" role="alert" style=" margin: auto;">
   <strong>El registro se ha completado de forma exitosa! <br>
           Gracias por confiar en Negocios Informaticos SA.</strong>

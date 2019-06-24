@@ -47,7 +47,7 @@
 
 
     <div class="noTengo">
-      ¿No tenés usuario? <a href="registro">¡Registrate!</a>
+      ¿No tenés usuario? <a href="register">¡Registrate!</a>
     </div>
 
 
