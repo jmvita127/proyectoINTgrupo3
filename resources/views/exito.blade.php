@@ -23,7 +23,7 @@
 @endif
 
 <div class="alert alert-success alert-dismissible fade show" id="cartel" role="alert" style=" margin: auto;">
-  <strong>El registro se ha completado de forma exitosa! <br>
+  <strong>El loggeo se ha completado de forma exitosa! <br>
           Gracias por confiar en Negocios Informaticos SA.</strong>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>

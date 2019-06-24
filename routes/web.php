@@ -9,7 +9,11 @@ Route::post('/product/edit/{id}', 'ProductController@update')->middleware('auth'
 Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('auth');
 
 Route::get('/deleteProduct/{id}', 'ProductController@show')->middleware('auth');
+
 Route::post('/deleteProduct/{id}', 'ProductController@delete')->middleware('auth');
+
+Route::get('/exito', 'ExitoController@exito')->middleware('auth');
+
 
 // RUTAS CON AUTH / LOGEO //
 Auth::routes();
@@ -38,8 +42,6 @@ Route::get('/cajaBlanca', 'CajaBlancaController@cajaBlanca');
 Route::get('/consolas', 'ConsolaController@consolas');
 
 Route::get('/equipos', 'EquiposController@equipos');
-
-Route::get('/exito', 'ExitoController@exito');
 
 Route::get('/quienesSomos', 'QuienesSomosController@quienesSomos'); // Tambien routea parte del footer
 
