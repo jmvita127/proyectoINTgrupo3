@@ -50,7 +50,7 @@
       @if (isset(Auth::user()->isAdmin))
       <a href="/product/edit/{{$product->id}}" class="btn btn-primary">Editar Producto</a>
       <a href="/deleteProduct/{{$product->id}}" class="btn btn-danger">Eliminar</a>
-      <a href="" class="btn btn-success"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></a>
+      <a href="/carrito/{{$product->id}}" class="btn btn-success"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></a>
       @endif
       @guest
       <a class="nav-link" href="register" style="color:orange;">REGISTRATE PARA COMPRAR!<span class="sr-only">(current)</span></a>

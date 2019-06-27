@@ -48,7 +48,7 @@
 
 
         <li class="carrito">
-          <img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30">
+          <a href="carrito">  <img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"> </a>
         </li>
         @auth
 

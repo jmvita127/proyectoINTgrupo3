@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use App\Cart;
+
 class User extends Authenticatable
 {
   protected $table = 'Users';
@@ -42,7 +44,7 @@ class User extends Authenticatable
 
   public function carrito() {
 
-    return $this->belongsToMany(Products::class,'carts');
+    return $this->belongsToMany(Product::class,'Cart');
   }
 
   public function favoritos()

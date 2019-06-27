@@ -28,9 +28,21 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('cerrarSesion', 'Auth\LoginController@logout')->name('logout');
 
 // RUTAS GENERALES //
-Route::get('/carrito', 'CartController@showCart');
 
-Route::post('/carrito/{id}', 'CartController@addToCart');
+
+Route::get('/carrito', 'CartController@index')->middleware('auth');;
+
+Route::get('/carrito', 'CartController@showCart')->middleware('auth');;
+
+Route::get('/carrito/{id}', 'CartController@showCart');
+
+Route::get('/carrito/{id}', 'CartController@addToCart');
+
+
+
+Route::post('/carrito/{id}', 'CartController@deleteToCart');
+
+
 
 Route::get('/products', 'ProductController@index');
 Route::get('/products', 'ProductController@search');
