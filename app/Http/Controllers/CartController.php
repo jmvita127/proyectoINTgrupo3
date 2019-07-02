@@ -17,13 +17,14 @@ class CartController extends Controller
    }
 
 
-  public function addToCart($id, Request $request)
+  public function addToCart( Request $request)
   {
     $user =Auth::user();
+    $user->carrito()->attach($request->product_id,
+    ['quantity'=>'1', 'date_purchase' => date('Y-m-d')]
+  );
 
-    $user->carrito()->attach($request->product_id, ['quantity=>1']);
-
-    return redirect ('carrito')->with('mensaje', 'Producto agregado exitosamente!');
+    return redirect ('carrito');
 
   }
 

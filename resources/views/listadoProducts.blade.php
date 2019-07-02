@@ -1,5 +1,5 @@
-@include('partials.header')
-
+@extends('plantilla.plantilla')
+@section('content')
 <br>
 <br>
 <h2>CARTELERA DE PRODUCTOS</h2>
@@ -50,7 +50,13 @@
       @if (isset(Auth::user()->isAdmin))
       <a href="/product/edit/{{$product->id}}" class="btn btn-primary">Editar Producto</a>
       <a href="/deleteProduct/{{$product->id}}" class="btn btn-danger">Eliminar</a>
-      <a href="/carrito/{{$product->id}}" class="btn btn-success"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></a>
+
+    <form class="" action="/carrito" method="post">
+     @csrf
+     <input type="hidden" name="product_id" value="{{$product->id}}">
+     <button type="submit" class="btn btn-success"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></a>
+     </form>
+
       @endif
       @guest
       <a class="nav-link" href="register" style="color:orange;">REGISTRATE PARA COMPRAR!<span class="sr-only">(current)</span></a>
@@ -64,5 +70,4 @@
 <div class="" style="margin-left: 55px">
   {{$products->links()}}
 </div>
-
-@include('partials.footer')
+@endsection
