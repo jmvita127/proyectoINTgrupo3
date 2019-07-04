@@ -3,27 +3,27 @@
   <div class="col-12 col-md-6 col-lg-4">
     <ul>
     <h5>NEGOCIO INFORMATICO</h5>
-    <a href="quienesSomos"><li>Conoce Nuestra Historia</li></a>
-    <a href="quienesSomos"><li>Donde nos Encontramos?</li></a>
-    <a href="quienesSomos"><li>Trabaja con Negocios Informaticos S.A.</li></a>
+    <a href="/quienesSomos"><li>Conoce Nuestra Historia</li></a>
+    <a href="/quienesSomos"><li>Donde nos Encontramos?</li></a>
+    <a href="/quienesSomos"><li>Trabaja con Negocios Informaticos S.A.</li></a>
   </ul>
 </div>
 
 <div class="col-12 col-md-6 col-lg-4">
   <ul>
     <h5>MI CUENTA</h5>
-    <a href="login.php"><li>Mi Carrito</li></a>
-    <a href="login.php"><li>Modificar Mis Datos</li></a>
+    <a href="/carrito"><li>Mi Carrito</li></a>
+    <a href="/exito"><li>Modificar Mis Datos</li></a>
   </ul>
   </div>
 
   <div class="col-12 col-md-6 col-lg-4">
   <ul>
     <h5>SERVICIO AL CLIENTE</h5>
-    <a href="quienesSomos#formasdepago"><li>Formas De Pago</li></a>
-    <a href="libroDeQuejas"><li>Libro De Quejas</li></a>
-    <a href="quienesSomos#garantia"><li>Garantia</li></a>
-    <a href="quienesSomos"><li>Centro de Ayuda</li></a>
+    <a href="/quienesSomos#formasdepago"><li>Formas De Pago</li></a>
+    <a href="/libroDeQuejas"><li>Libro De Quejas</li></a>
+    <a href="/quienesSomos#garantia"><li>Garantia</li></a>
+    <a href="/quienesSomos"><li>Centro de Ayuda</li></a>
   </ul>
   </div>
 </div>

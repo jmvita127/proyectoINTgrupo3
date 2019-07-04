@@ -1,6 +1,5 @@
-@include('partials.header')
-
-
+@extends('plantilla.plantilla')
+@section('content')
     <div class="form-header">
       <h2 class="form-title">C<span>rear</span> P<span>roducto</span> </h2>
     </div>
@@ -37,3 +36,4 @@
       </form>
 
     </div>
+@endsection

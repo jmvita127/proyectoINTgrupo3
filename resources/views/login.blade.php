@@ -1,8 +1,14 @@
 @extends('plantilla.plantilla')
 
 @section('content')
+<style media="screen">
+  .invalid-feedback{
+    display:inline-block;
+  }
+</style>
+
 <div class="contenedor">
-  <form class="formulariogrande" action="{{ route('login') }}" method="post" enctype="multipart/form-data">
+  <form class="formulariogrande" id="form-login" action="{{ route('login') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-header">
       <h2 class "form-title">I<span>ngresar</span></h2>
@@ -10,23 +16,34 @@
 
     <label class="form-label" for="email">Correo Electrónico <pre id="errorform"></pre></label>
 
-    <input class="form-input" id="email" type="email" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+    <div class="">
+      <input class="form-input @error('email') is-invalid @enderror" id="email" type="email"  name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+
+      {{-- @error('email')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ "Usuario o contraseña incorrectos" }}</strong>
+          </span>
+      @enderror --}}
+  </div>
+
+<div class="">
+
+    <label class="form-label" for="password">Contraseña </label>
+    <input class="form-input @error('password') is-invalid @enderror" id="password" type="password"  name="password" value="{{ old('password') }}" autocomplete="password" autofocus>
+
+    {{-- @error('password')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ "hola" }}</strong>
+        </span>
+    @enderror --}}
 
     @error('email')
         <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
+            <strong>{{ "Usuario o contraseña incorrectos" }}</strong>
         </span>
     @enderror
-
-
-    <label class="form-label" for="password">Contraseña </label>
-    <input class="form-input" id="password" type="password" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-    @error('password')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
+  </div>
 
     <div class="">
       <input type="checkbox" name="remember" id="recordarme" {{ old('remember') ? 'checked' : '' }}>
@@ -55,6 +72,5 @@
   </form>
   <br>
 </div>
-
-
+<script type="text/javascript" src="/js/login/login.js"></script>
 @endsection

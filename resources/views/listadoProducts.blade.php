@@ -4,9 +4,12 @@
 <br>
 <h2>CARTELERA DE PRODUCTOS</h2>
 <br>
-@if (isset(Auth::user()->isAdmin))
+@auth
+@if (Auth::user()->isAdmin)
 <a href="create" class="btn btn-success" style="margin-left: 55px">Crear Producto</a>
 @endif
+@endauth
+
 <br>
 <br>
 
@@ -47,17 +50,19 @@
       <p class="card-text">{{$product->description}}</p>
       <p class="card-text">Precio: ${{$product->price}}</p>
       <p class="card-text">Stock: {{$product->stock}}</p>
-      @if (isset(Auth::user()->isAdmin))
+      @auth
+      @if (Auth::user()->isAdmin)
       <a href="/product/edit/{{$product->id}}" class="btn btn-primary">Editar Producto</a>
       <a href="/deleteProduct/{{$product->id}}" class="btn btn-danger">Eliminar</a>
-
+@endif
     <form class="" action="/carrito" method="post">
      @csrf
      <input type="hidden" name="product_id" value="{{$product->id}}">
      <button type="submit" class="btn btn-success"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></a>
      </form>
 
-      @endif
+
+    @endauth
       @guest
       <a class="nav-link" href="register" style="color:orange;">REGISTRATE PARA COMPRAR!<span class="sr-only">(current)</span></a>
       @endguest

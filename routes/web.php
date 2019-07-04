@@ -1,26 +1,33 @@
 <?php
 //RUTAS CON MIDDLEWARE //
-Route::get('/create', 'ProductController@create')->middleware('auth');
+Route::get('/create', 'ProductController@create')->middleware('admin');
 
-Route::post('/create/validate', 'ProductController@save')->middleware('auth');
+Route::post('/create/validate', 'ProductController@save')->middleware('admin');
 
-Route::post('/product/edit/{id}', 'ProductController@update')->middleware('auth');
+Route::post('/product/edit/{id}', 'ProductController@update')->middleware('admin');
 
-Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('auth');
+Route::get('/product/edit/{id}', 'ProductController@edit')->middleware('admin');
 
-Route::get('/deleteProduct/{id}', 'ProductController@show')->middleware('auth');
+Route::get('/deleteProduct/{id}', 'ProductController@show')->middleware('admin');
 
-Route::post('/deleteProduct/{id}', 'ProductController@delete')->middleware('auth');
+Route::post('/deleteProduct/{id}', 'ProductController@delete')->middleware('admin');
 
 Route::get('/exito', 'ExitoController@exito')->middleware('auth');
 
-
-// RUTAS CON AUTH / LOGEO //
 Auth::routes();
+
+Route::get('/carrito/', 'CartController@showCart')->middleware('auth');
+
+Route::post('/carrito/', 'CartController@addToCart')->middleware('auth');
+
+Route::post('/carrito/eliminarCarrito', 'CartController@deleteToCart')->middleware('auth');
+
+// RUTAS CON NAME //
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+
 Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -29,17 +36,8 @@ Route::post('cerrarSesion', 'Auth\LoginController@logout')->name('logout');
 
 // RUTAS GENERALES //
 
-
-
-Route::get('/carrito', 'CartController@showCart')->middleware('auth');;
-
-Route::get('/carrito/', 'CartController@showCart');
-
-Route::post('/carrito/', 'CartController@addToCart');
-
-Route::post('/carrito/eliminarCarrito', 'CartController@deleteToCart');
-
 Route::get('/products', 'ProductController@index');
+
 Route::get('/products', 'ProductController@search');
 
 Route::get('/index', 'IndexController@home');

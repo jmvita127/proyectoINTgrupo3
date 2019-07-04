@@ -1,7 +1,11 @@
 @extends('plantilla.plantilla')
 
 @section('content')
-
+  <style media="screen">
+    .invalid-feedback{
+      display:inline-block;
+    }
+  </style>
 @auth
 <h1> ya estas registrado</h1>
 @endauth
@@ -15,43 +19,49 @@
 
 
     <label class="form-label" for="name">Nombre <pre id="errorform"></pre></label>
-    <input class="form-input" id="name" type="text" @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <input class="form-input @error('name') is-invalid @enderror" id="name" type="text"  name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
 
     @error('name')
-    <span class="invalid-feedback" role="alert">
-      <strong>{{ $message }}</strong>
-    </span>
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ "INGRESE NOMBRE VALIDO" }}</strong>
+        </span>
     @enderror
 
     <label class="form-label" for="last_name">Apellido <pre id="errorform"></pre></label>
-    <input class="form-input" id="last_name" type="text" @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name">
+    <input class="form-input @error('last_name') is-invalid @enderror" id="last_name" type="text"  name="last_name" value="{{ old('last_name') }}" autocomplete="last_name" autofocus>
 
     @error('last_name')
-    <span class="invalid-feedback" role="alert">
-      <strong>{{ $message }}</strong>
-    </span>
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ "INGRESE APELLIDO VALIDO" }}</strong>
+        </span>
     @enderror
 
     <label class="form-label" for="email">Correo Electrónico <pre id="errorform"></pre></label>
-    <input class="form-input" id="email" type="email" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+    <input class="form-input @error('email') is-invalid @enderror" id="email" type="email"  name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
 
     @error('email')
-    <span class="invalid-feedback" role="alert">
-      <strong>{{ $message }}</strong>
-    </span>
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ "INGRESE EMAIL VALIDO" }}</strong>
+        </span>
     @enderror
 
     <label class="form-label" for="password">Contraseña <pre id="errorform"></pre></label>
-    <input class="form-input" id="password" type="password" @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+    <input class="form-input @error('password') is-invalid @enderror" id="password" type="password"  name="password" value="{{ old('password') }}" autocomplete="password" autofocus>
 
     @error('password')
-    <span class="invalid-feedback" role="alert">
-      <strong>{{ $message }}</strong>
-    </span>
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ "INGRESE CONTRASEÑA VALIDA" }}</strong>
+        </span>
     @enderror
 
     <label class="form-label" for="password-confirm">Confirmar Contraseña <pre id="errorform"></pre> </label>
-    <input class="form-input" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password">
+    <input class="form-input @error('password_confirmation') is-invalid @enderror" id="password_confirmation" type="password"  name="password_confirmation" autocomplete="new-password">
+
+    @error('password_confirmation')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ "LA CONTRASEÑA NO COINCIDE" }}</strong>
+        </span>
+    @enderror
 
     {{-- <label class="form-label" for="pregunta">Pregunta de Seguridad<pre id="errorform">INGRESAR ERROR</pre></label>
     <select class="form-input" name="pregunta-formulario">
@@ -69,12 +79,12 @@
     <input class="form-input" type="text" name="respuesta-formulario" placeholder="Ingrese una Respuesta..." value=""> --}}
 
     <label class="form-label" for="avatar">Avatar:<pre id="errorform"></pre></label>
-    <input class="form-input" id="avatar" type="FILE" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
+    <input class="form-input @error('avatar') is-invalid @enderror" id="avatar" type="FILE" name="avatar"">
 
     @error('avatar')
-    <span class="invalid-feedback" role="alert">
-      <strong>{{ $message }}</strong>
-    </span>
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ "SUBA UNA IMAGEN" }}</strong>
+        </span>
     @enderror
 
     <br>
