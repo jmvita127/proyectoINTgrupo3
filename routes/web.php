@@ -52,6 +52,10 @@ Route::get('/quienesSomos', 'QuienesSomosController@quienesSomos'); // Tambien r
 
 Route::get('/libroDeQuejas', 'LibroDeQuejasController@libroDeQuejas');
 
+Route::get('/product/detalleProductos/{id}', 'ProductController@detalleProductos');
+
+Route::post('/product/detalleProductos/{id}', 'CartController@addToCart');
+
 //porque nos estamos confundiendo mucho entre index y home:
 
 Route::get('/home', 'IndexController@home');

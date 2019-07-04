@@ -1,37 +1,38 @@
 @extends('plantilla.plantilla')
 @section('content')
+ <div class="form-header">
+   <h2 class="form-title">C<span>arrito</span> </h2>
+ </div>
 
-@auth
-<div class="form-header">
-  <h2 class="form-title">C<span>arrito</span> </h2>
-</div>
 
-@foreach($products as $product)
+ @foreach($products as $product)
 
-  <div class="contenedor">
-    <form class="formulariogrande" action="/carrito/eliminarCarrito" method="post" enctype="multipart/form-data">
-     @csrf
-     <div class="card mb-3" style="max-width: 540px;">
-       <div class="row no-gutters">
-         <div class="col-md-4">
-           <img src="/storage/{{$product->imagen}}" class="card-img" alt="...">
-         </div>
-         <div class="col-md-4">
-           <div class="card-body">
-             <h5 class="card-title" >{{$product->name}}</h5>
-             <p class="card-text"><a href="#">Ver detalle</a></p>
-             <p class="card-text"><small class="text-muted">{{$product->price}}</small></p>
+   <div class="contenedor">
+     <form class="formulariogrande" action="/carrito/eliminarCarrito" method="post" enctype="multipart/form-data">
+       @csrf
 
-             <button type="submit" name="detalle_id" value="{{$product->id}}">sacar del carrito</button>
+       <div class="media block-update-card">
+         <a class="pull-left" href="#">
+           <img class="media-object update-card-MDimentions" src="/storage/{{$product->imagen}}" style="width:300px;"alt="...">
+         </a>
+         <div class="media-body update-card-body" style="text-align:center;line-height:100px;">
+
+           <h4 class="media-heading" style="font-size:2em;color:darkorange;">{{$product->name}}</h4>
+
+           <p class="card-text" style="font-size:1em;color:mintcream">{{$product->description}}</p>
+
+           <p style="font-size:1.6em;color:mintcream">Precio: ${{$product->price}}</p>
+
 
            </div>
+
+
          </div>
+         <br>
+
+
+         <button type="submit" class="btn btn-dark" name="detalle_id" value="{{$product->id}}">Eliminar del Carrito</button>
        </div>
-     </div>
-    </form>
 
-  </div>
-
-  @endforeach
-@endauth
-@endsection
+     @endforeach
+   @endsection

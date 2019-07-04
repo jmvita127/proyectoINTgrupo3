@@ -37,7 +37,9 @@
   <div class="card text-white bg-dark mb-3"
   style="
     text-align: center;
-    max-width: 25rem;
+    max-width: 500px;
+    min-height: 500px;
+    max-height: 500px;
     margin: auto;
     padding-left: 0px;
     padding-top: 10px;
@@ -63,10 +65,12 @@
 
 
     @endauth
-      @guest
-      <a class="nav-link" href="register" style="color:orange;">REGISTRATE PARA COMPRAR!<span class="sr-only">(current)</span></a>
-      @endguest
-    </div>
+    @guest
+    <a class="nav-link" href="register" style="color:orange;">REGISTRATE PARA COMPRAR!<span class="sr-only">(current)</span></a>
+    @endguest
+  </div>
+  <a href="/product/detalleProductos/{{$product->id}}" class="btn btn-info" style="
+    text-align: center;">VER DETALLE</a>
   </div>
   </div>
   @endforeach

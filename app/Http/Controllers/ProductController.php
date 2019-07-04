@@ -149,4 +149,14 @@ class ProductController extends Controller
      }
        return view('listadoProducts')->with( [ 'products' => $products] );
     }
+
+
+     public function detalleProductos($id)
+   {
+
+     $cosa = Product::find($id);
+
+     return view('detalleProductos')->with(['product' => $cosa]);
+   }
+
 }
