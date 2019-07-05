@@ -22,12 +22,12 @@
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror <br>
      <label for="description">Descripcion</label>
-     <textarea name="description" id="description" rows="8" cols="40"></textarea><br>
+     <textarea name="description" id="description" rows="8" cols="40">{{old('description', $product->description)}}</textarea><br>
      @error('description')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror <br>
     <label for="imagen">IMAGEN</label>
-    <input type="file" name="imagen" id="imagen" value="{{old('imagen', $product->imagen)}}"><br>
+    <input type="file" name="imagen" id="imagen" value="<img src="{{old('imagen', $product->imagen)}}" alt="">"><br>
     @error('imagen')
        <div class="alert alert-danger">{{ $message }}</div>
    @enderror <br>

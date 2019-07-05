@@ -34,6 +34,7 @@
       padding-left: 0px;
       padding-top: 10px;
       ">
+      
       <div class="card-body">
         <h5 class="card-title" style="font-family: 'Orbitron', sans-serif;
         font-weight: bold;">¿DONDE ESTAMOS?</h5>

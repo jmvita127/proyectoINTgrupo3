@@ -28,10 +28,10 @@ window.onload = function () {
             event.preventDefault();
         }
 
-        if (password.value == '') {
+        if (password.value.trim() == '' || password.value.length < 8) {
             // password.classList.add('is-invalid');
             var error = document.createElement('span');
-            error.innerText = 'Debe de estar lleno';
+            error.innerText = 'La contrasenia debe tener minimo 8 caracteres';
             var div = password.parentElement;
             if (div.children[2]) {
                 div.removeChild(div.children[2]);

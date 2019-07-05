@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
 //       );
 
       factory(App\Product::class, 30)->create(); //va a crear 30 peliculas
-
+      
     }
 }

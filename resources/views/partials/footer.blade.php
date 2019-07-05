@@ -3,9 +3,9 @@
   <div class="col-12 col-md-6 col-lg-4">
     <ul>
     <h5>NEGOCIO INFORMATICO</h5>
-    <a href="/quienesSomos"><li>Conoce Nuestra Historia</li></a>
-    <a href="/quienesSomos"><li>Donde nos Encontramos?</li></a>
-    <a href="/quienesSomos"><li>Trabaja con Negocios Informaticos S.A.</li></a>
+    <a href="/quienesSomos#quienes"><li>Conoce Nuestra Historia</li></a>
+    <a href="/quienesSomos#quienes"><li>Donde nos Encontramos?</li></a>
+    <a href="/quienesSomos#quienes"><li>Trabaja con Negocios Informaticos S.A.</li></a>
   </ul>
 </div>
 
