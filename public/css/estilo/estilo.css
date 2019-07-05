@@ -75,8 +75,7 @@
 h1 {
   font-size: 4.5em;
   font-family: 'Orbitron', sans-serif;
-  color:burlywood;
-  width:40%;
+  color:orange;
   text-shadow: 0 0 30px #ffb;
   text-decoration: none;
 }
@@ -166,11 +165,15 @@ li a{
 .NISA {
   text-decoration: none;
   color:orange;
+  font-family: 'Orbitron', sans-serif;
+ }
 }
 
 .NISA:hover {
   text-decoration: none;
   color:orange;
+  font-family: 'Orbitron', sans-serif;
+ }
 }
 
 body {

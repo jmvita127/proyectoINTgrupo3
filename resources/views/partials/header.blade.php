@@ -19,7 +19,7 @@
   <header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="NISA" href="index"></a><h1>NISA <a href="index"><img class="logo" src="/imagenes/logo.jpg" alt="logo" witdh="100" height="110"></a></h1>
+      <a class="NISA" href="index"></a><h1><a href="index"><img class="logo" src="/imagenes/logo.jpg" alt="logo" witdh="100" height="110"></a></h1>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,14 +41,14 @@
 
         </ul>
         <form action="/products" class="form-inline my-2 my-lg-0" id="buscador" method="get">
-          <input class="form-control mr-sm-2" type="text" name="name" placeholder="Buscar Producto" aria-label="Search">
-          <button type="submit" class="btn btn-primary" style="margin-top:5px">Buscar</button>
+          <input class="form-control mr-sm-2" type="text" name="name" placeholder="Buscar Producto" aria-label="Search" style="width: 400px;">
+          <button type="submit" class="btn btn-primary" style="margin: auto;">Buscar</button>
         </form>
 
 
 
         <li class="carrito">
-          <a href="carrito">  <img class="/carrito" src="/imagenes/carrito.png" alt="" witdh="45" height="45"> </a>
+          <a href="carrito">  <img class="/carrito" src="/imagenes/carrito.png" alt="" witdh="75" height="45"> </a>
         </li>
         @auth
 
