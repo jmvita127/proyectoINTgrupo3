@@ -28,6 +28,8 @@ body {
   text-align: center;
   color: #ff851b;
   padding: 14px, 0px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .contenedor, .form-header, .formulariogrande, .form-title {
   color: #fff;

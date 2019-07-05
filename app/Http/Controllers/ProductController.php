@@ -11,9 +11,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-      $products = Product::paginate(9);
+      $products = Product::paginate(12);
 
-      //$products = Product::all();
+      // $products = Product::all();
 
       return view('listadoProducts')->with(['products' => $products]);
     }

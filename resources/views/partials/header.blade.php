@@ -42,13 +42,13 @@
         </ul>
         <form action="/products" class="form-inline my-2 my-lg-0" id="buscador" method="get">
           <input class="form-control mr-sm-2" type="text" name="name" placeholder="Buscar Producto" aria-label="Search">
-          <button type="submit" class="btn btn-primary">Buscar</button>
+          <button type="submit" class="btn btn-primary" style="margin-top:5px">Buscar</button>
         </form>
 
 
 
         <li class="carrito">
-          <a href="carrito">  <img class="/carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"> </a>
+          <a href="carrito">  <img class="/carrito" src="/imagenes/carrito.png" alt="" witdh="45" height="45"> </a>
         </li>
         @auth
 
@@ -80,7 +80,8 @@
           <li class="boton">
             <button class="btn" type="submit"></button><br>
             <a class="botonreg" href="register"><button type="button" class="btn btn-outline-danger">REGISTRARSE</button></a>
-            <a href="login"> <button type="button" class="btn btn-outline-warning">INGRESAR</button></a>
+
+            <a class="botonreg" href="login"> <button type="button" class="btn btn-outline-warning" style="margin-top:5px">INGRESAR</button></a>
 
 
           </li>

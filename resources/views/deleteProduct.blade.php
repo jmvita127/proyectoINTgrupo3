@@ -11,6 +11,8 @@
      <button type="submit" name="button" class="btn btn-danger">Eliminar Producto</button>
  </form>
 
-
+<br>
+<br>
+<br>
 </div>
 @endsection

@@ -5,6 +5,7 @@
 
 }
 
+
 .productos {
   color: orange;
   display: block;
@@ -704,13 +705,15 @@ text-align: center;
 
 /* estilo nav */
 
-  .boton {
-    margin-left: -10%;
+  .botonreg {
+    margin:0;
+    padding: 0;
   }
 
   .carrito{
     width: 50px;
     height: 50px;
+    padding: 0;
     margin: 0;
   }
 
@@ -871,10 +874,15 @@ text-align: center;
 
 }
 
-  @media (min-width:576px) and (max-width:860px) {
+  @media (min-width:576px) and (max-width:1000px) {
 
     #cartel {
         width: 68%;
+    }
+
+    .botonreg {
+      margin:0;
+      padding: 0;
     }
 
   /* estilo nav */
