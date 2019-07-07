@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 //         ]
 //       );
 
-      factory(App\Product::class, 30)->create(); //va a crear 30 peliculas
+      factory(App\Product::class, 5)->create(); //va a crear 30 peliculas
       factory(App\User::class, 1)->create();
     }
 }
