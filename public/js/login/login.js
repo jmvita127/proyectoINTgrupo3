@@ -7,7 +7,7 @@ window.onload = function () {
 
     email.onblur = function () {
         if (regexEmail.test(this.value)) {
-          console.log("hola");
+          //console.log("hola");
             this.classList.remove('is-invalid');
         }
     }
@@ -31,7 +31,7 @@ window.onload = function () {
         if (password.value.trim() == '' || password.value.length < 8) {
             // password.classList.add('is-invalid');
             var error = document.createElement('span');
-            error.innerText = 'La contrasenia debe tener minimo 8 caracteres';
+            error.innerText = 'La contraseña debe tener minimo 8 caracteres';
             var div = password.parentElement;
             if (div.children[2]) {
                 div.removeChild(div.children[2]);

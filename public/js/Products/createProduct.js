@@ -1,6 +1,8 @@
-var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/;
-var validarLetrasNA = /^[a-zA-Z ]+$/;
+var validarNumero = /^([0-9])*$/;
+var validarLetras = /^[a-zA-Z0-9 ._-]+$/;
 var imagen = /.[jpeg|jpg|png]$/;
+
+
 
 function validarVacio(input)
 {
@@ -23,7 +25,7 @@ function pintarError(input, mensaje)
     var div = elemento.parentElement;
     if (div.children[1])
     {
-        div.removeChild(div.children[1]);
+        div.removeChild(div.children[2]);
     }
     error.append(strong);
     div.append(error);
@@ -33,7 +35,7 @@ window.onload = function()
 {
 
 
-    var form = document.querySelector('.formulariogrande');
+    var form = document.querySelector('#formCreate');
 
     form.onsubmit = function(event)
     {
@@ -46,14 +48,14 @@ window.onload = function()
             {
                 continue;
             }
-            if (elemento.name == 'name' &&  !validarLetrasNA.test(elemento.value))
+            if (elemento.name == 'name' &&  !validarLetras.test(elemento.value))
             {
-                pintarError(elemento, 'El nombre no puede contener simbolos o numeros');
+                pintarError(elemento, 'El nombre no puede contener simbolos');
                 event.preventDefault();
             }
-            if (elemento.name == 'last_name' &&  !validarLetrasNA.test(elemento.value))
+            if (elemento.name == 'stock' &&  !validarNumero.test(elemento.value))
             {
-                pintarError(elemento, 'El apellido no puede contener simbolos o numeros');
+                pintarError(elemento, 'El stock no puede contener simbolos o letras');
                 event.preventDefault();
             }
 
@@ -61,39 +63,16 @@ window.onload = function()
             {
                 event.preventDefault();
             }
-
             if (elemento.type == 'file' && !imagen.test(elemento.value)){
                 pintarError(elemento, 'La extension de la imagen tiene que ser .JPG,.JPEG,.PNG.')
                 event.preventDefault();
             }
-
-            if (elemento.name == 'email' &&  !regexEmail.test(elemento.value))
+            if (elemento.name == 'price' &&  !validarNumero.test(elemento.value))
             {
-                pintarError(elemento, 'Email invalido');
+                pintarError(elemento, 'El precio no puede contener simbolos o letras');
                 event.preventDefault();
             }
 
-
-            if (elemento.name == 'password')
-            {
-
-                var confirm = document.querySelector('#password_confirmation');
-                if (elemento.value.length < 8)
-                {
-                    pintarError(elemento, 'La contraseña debe contener minimo 8 caracteres');
-                    password.value = "";
-                    event.preventDefault();
-
-                }
-                else if (elemento.value != confirm.value)
-                {
-                    pintarError(elemento, 'Las contraseñas no coinciden');
-                    password.value = "";
-                    password_confirmation.value = "";
-                    event.preventDefault();
-
-                }
             }
         }
-    }
-};
+  }

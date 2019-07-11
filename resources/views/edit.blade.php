@@ -69,6 +69,6 @@
 
 
    </form>
-<script type="text/javascript" src="/js/editProduct/editProduct.js"></script>
+<script type="text/javascript" src="/js/Products/editProduct.js"></script>
  </div>
 @endsection

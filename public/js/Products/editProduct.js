@@ -1,5 +1,7 @@
 var validarNumero = /^([0-9])*$/;
 var validarLetras = /^[a-zA-Z0-9 ._-]+$/;
+var imagen = /.[jpeg|jpg|png]$/;
+
 
 
 function validarVacio(input)
@@ -61,6 +63,10 @@ window.onload = function()
             {
                 event.preventDefault();
             }
+            if (elemento.type == 'file' && !imagen.test(elemento.value)){
+                pintarError(elemento, 'La extension de la imagen tiene que ser .JPG,.JPEG,.PNG.')
+                event.preventDefault();
+            }
             if (elemento.name == 'price' &&  !validarNumero.test(elemento.value))
             {
                 pintarError(elemento, 'El precio no puede contener simbolos o letras');
@@ -69,4 +75,4 @@ window.onload = function()
 
             }
         }
-    }
+  }

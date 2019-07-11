@@ -19,7 +19,7 @@
 @if (Auth::user()->isAdmin)
 <h3>SOS ADMIN</h1>
 @else
-<h3>NO SOS ADMIN</h3>
+<!-- <h3>NO SOS ADMIN</h3> -->
 @endif
 
 <div class="alert alert-success alert-dismissible fade show" id="cartel" role="alert" style=" margin: auto;">

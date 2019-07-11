@@ -26,8 +26,7 @@
               <strong>{{ "INGRESE NOMBRE VALIDO" }}</strong>
           </span>
       @enderror
-    </div>
-
+    </div><br>
 
 
     <label class="form-label" for="last_name">Apellido <pre id="errorform"></pre></label>
@@ -38,7 +37,7 @@
             <strong>{{ "INGRESE APELLIDO VALIDO" }}</strong>
         </span>
     @enderror
-    </div>
+    </div><br>
 
 
 
@@ -50,7 +49,7 @@
             <strong>{{ "INGRESE EMAIL VALIDO" }}</strong>
         </span>
     @enderror
-    </div>
+    </div><br>
 
 
 
@@ -62,7 +61,7 @@
             <strong>{{ "INGRESE CONTRASEÑA VALIDA" }}</strong>
         </span>
     @enderror
-    </div>
+    </div><br>
 
 
     <label class="form-label" for="password-confirm">Confirmar Contraseña <pre id="errorform"></pre></label>
@@ -73,7 +72,7 @@
             <strong>{{ "LA CONTRASEÑA NO COINCIDE" }}</strong>
         </span>
     @enderror
-    </div>
+    </div><br>
 
 
 
