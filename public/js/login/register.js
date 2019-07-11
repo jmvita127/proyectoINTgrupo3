@@ -1,4 +1,5 @@
 var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/;
+var validarLetras = /^[a-zA-Z0-9 ._-]+$/;
 
 
 function validarVacio(input)
@@ -45,12 +46,12 @@ window.onload = function()
             {
                 continue;
             }
-            if (elemento.name == 'name' &&  regexEmail.test(elemento.value))
+            if (elemento.name == 'name' &&  !validarLetras.test(elemento.value))
             {
                 pintarError(elemento, 'El nombre no puede contener simbolos');
                 event.preventDefault();
             }
-            if (elemento.name == 'last_name' &&  regexEmail.test(elemento.value))
+            if (elemento.name == 'last_name' &&  !validarLetras.test(elemento.value))
             {
                 pintarError(elemento, 'El apellido no puede contener simbolos');
                 event.preventDefault();

@@ -1,4 +1,5 @@
-var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/;
+var validarNumero = /^([0-9])*$/;
+var validarLetras = /^[a-zA-Z0-9 ._-]+$/;
 
 
 function validarVacio(input)
@@ -22,7 +23,7 @@ function pintarError(input, mensaje)
     var div = elemento.parentElement;
     if (div.children[1])
     {
-        div.removeChild(div.children[1]);
+        div.removeChild(div.children[2]);
     }
     error.append(strong);
     div.append(error);
@@ -45,14 +46,14 @@ window.onload = function()
             {
                 continue;
             }
-            if (elemento.name == 'name' &&  regexEmail.test(elemento.value))
+            if (elemento.name == 'name' &&  !validarLetras.test(elemento.value))
             {
                 pintarError(elemento, 'El nombre no puede contener simbolos');
                 event.preventDefault();
             }
-            if (elemento.name == 'stock' &&  regexEmail.test(elemento.value))
+            if (elemento.name == 'stock' &&  !validarNumero.test(elemento.value))
             {
-                pintarError(elemento, 'El stock no puede contener simbolos');
+                pintarError(elemento, 'El stock no puede contener simbolos o letras');
                 event.preventDefault();
             }
 
@@ -60,9 +61,9 @@ window.onload = function()
             {
                 event.preventDefault();
             }
-            if (elemento.name == 'price' &&  regexEmail.test(elemento.value))
+            if (elemento.name == 'price' &&  !validarNumero.test(elemento.value))
             {
-                pintarError(elemento, 'Precio Invalido');
+                pintarError(elemento, 'El precio no puede contener simbolos o letras');
                 event.preventDefault();
             }
 
