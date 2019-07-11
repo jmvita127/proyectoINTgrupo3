@@ -78,10 +78,59 @@
   <article class="contenedor0">
     <h3>OFERTAS SEMANALES IMPERDIBLES!</h3>
   </article>
-  <article class="contenedor1" id="relativo">
+    <div class="row">
+@foreach ($products as $product)
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card text-white bg-dark mb-3"
+          style="
+          text-align: center;
+          margin:auto;
+          padding: auto;
+          ">
+          <a name="quienes">
+            <img src="/storage/{{$product->imagen}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" style="font-family: 'Orbitron', sans-serif;
+              font-weight: bold;">{{$product->name}}</h5>
+              {{-- <p class="card-text">{{$product->description}}</p> --}}
+              <p class="card-text">Precio: ${{$product->price}}</p>
+              <p class="card-text">Stock: {{$product->stock}}</p>
+              @auth
+                @if (Auth::user()->isAdmin)
+                  <a href="/product/edit/{{$product->id}}" class="btn btn-primary">Editar Producto</a>
+                  <a href="/deleteProduct/{{$product->id}}" class="btn btn-danger">Eliminar</a>
+                @endif
+                <form class="" action="/carrito" method="post">
+                  @csrf
+                  <input type="hidden" name="product_id" value="{{$product->id}}">
+                  <button type="submit" class="btn btn-success" style="margin-top:5px"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></button>
+                  </form>
 
-    <img class="imagen1" src="/imagenes/promo1.jpg" alt="">
-    <!-- <a href="" id="enlace"></a> -->
+
+                @endauth
+                @guest
+                  <a class="nav-link" href="register" style="color:orange;">REGISTRATE PARA COMPRAR!<span class="sr-only">(current)</span></a>
+                @endguest
+              </div>
+              <a href="/product/detalleProductos/{{$product->id}}" class="btn btn-info" style="
+              text-align: center;">VER DETALLE</a>
+            </div>
+            </div>
+
+
+        @endforeach
+     </div>
+<!--
+     <div class=""style="margin-left: 55px">
+       {{$products->links()}}
+     </div> -->
+<br>
+</section>
+
+
+
+    <!-- <img class="imagen1" src="/imagenes/promo1.jpg" alt="">
+     <a href="" id="enlace"></a>
     <p class="texto3">Mouse Gamer Stone X9 / Para Juegos </p>
     <p class="texto4"><img class="carrito2" src="/imagenes/carrito.png" alt="">$499,99</p>
 
@@ -89,7 +138,7 @@
 
   <article class="contenedor2" id="relativo">
     <img class="imagen2" src="/imagenes/promo2.jpg" alt="">
-    <!-- <a href="" id="enlace"></a> -->
+    <a href="" id="enlace"></a>
     <p class="texto3">Motherboard Msi S1151 B360m Bazooka Box</p>
     <p class="texto4"><img class="carrito2" src="/imagenes/carrito.png" alt="">$2499</p>
 
@@ -97,7 +146,7 @@
 
   <article class="contenedor3" id="relativo">
     <img class="imagen3" src="/imagenes/promo3.jpg" alt="">
-    <!-- <a href="" id="enlace"></a> -->
+    <a href="" id="enlace"></a>
     <p class="texto3">SSD 250 WD</p>
     <p class="texto4"><img class="carrito2" src="/imagenes/carrito.png" alt="">$1590</p>
 
@@ -106,7 +155,7 @@
   <article class="contenedor4" id="relativo">
 
     <img class="imagen4" src="/imagenes/promo4.jpg" alt="">
-    <!-- <a href="" id="enlace"></a> -->
+    <a href="" id="enlace"></a>
     <p class="texto3">Gabinete Gamer Redragon Sideswipe Gc-601 Rgb Vidrio Templado</p>
     <p class="texto4"><img class="carrito2" src="/imagenes/carrito.png" alt="">$499,99</p>
 
@@ -114,7 +163,7 @@
 
   <article class="contenedor5" id="relativo">
     <img class="imagen5" src="/imagenes/promo5.jpg" alt="">
-    <!-- <a href="" id="enlace"></a> -->
+    <a href="" id="enlace"></a>
     <p class="texto3">Fuente Pc Evga Gq 850w 80plus Gold Modular Silent</p>
     <p class="texto4"><img class="carrito2" src="/imagenes/carrito.png" alt="">$2499</p>
 
@@ -122,7 +171,7 @@
 
   <article class="contenedor6" id="relativo">
     <img class="imagen6" src="/imagenes/promo6.jpg" alt="">
-    <!-- <a href="" id="enlace"></a> -->
+    <a href="" id="enlace"></a>
     <p class="texto3">Placa De Video Asus Phoenix Geforce Gtx 1050 2gb</p>
     <p class="texto4"><img class="carrito2" src="/imagenes/carrito.png" alt=""> $7590</p>
 
@@ -130,6 +179,6 @@
 
 
 
-</section>
+</section> -->
 
 @endsection
