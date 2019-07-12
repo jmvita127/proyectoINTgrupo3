@@ -1,8 +1,8 @@
 @extends('plantilla.plantilla')
 @section('content')
- <div class="form-header">
-   <h2 class="form-title">C<span>arrito</span> </h2>
- </div>
+<div class="form-header">
+  <h2 class="form-title">M<span>i</span> C<span>arrito</span> </h2>
+</div>
 
 
  @foreach($products as $product)

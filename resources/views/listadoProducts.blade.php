@@ -2,7 +2,9 @@
 @section('content')
   <br>
   <br>
-  <h2>CARTELERA DE PRODUCTOS</h2>
+  <div class="form-header">
+    <h2 class="form-title">S<span>eccion</span> G<span>aming</span> </h2>
+  </div>
   <br>
   @auth
     @if (Auth::user()->isAdmin)
@@ -34,6 +36,7 @@
 
 
 
+
 <div class="row">
   @foreach ($products as $product)
 
@@ -60,7 +63,7 @@
             <form class="" action="/carrito" method="post">
               @csrf
               <input type="hidden" name="product_id" value="{{$product->id}}">
-              <button type="submit" class="btn btn-success" style="margin-top:5px"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></button>
+              <button onclick= "alert('{{$product->name}} fue agregado al carrito exitosamente')" type="submit" class="btn btn-success" style="margin-top:5px"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></button>
               </form>
 
 
@@ -81,6 +84,5 @@
  <div class="" style="margin-left: 55px">
    {{$products->links()}}
  </div>
-
 
 @endsection

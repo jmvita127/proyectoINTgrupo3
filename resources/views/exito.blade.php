@@ -2,33 +2,59 @@
 
 @section('content')
 
+<div class="">
+<h2 class=""><span>Bienvenido a TU PERFIL</span><br>
+@if (Auth::user()->isAdmin)
+(USUARIO ADMINISTRADOR)
+@else
+@endif
+</h2>
+</div>
 
-<h3 class="bienvenida">Bienvenido, {{Auth::User()->name}}<img src="/storage/{{Auth::User()->avatar}}" alt="" class="avatar">
-<br><a class="perfil" href="index" style="margin: auto ">INICIO</a><br>
-<a class="perfil" href=href="{{ route('logout') }}"
-    onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();"
-     {{ __('Logout') }}
- style="color:red;">Cerrar Sesion</a>
+
+<!-- <div class="form-header">
+<h2 class="form-title"><span>Bienvenido a TU PERFIL</span> <br>
+@if (Auth::user()->isAdmin)
+(USUARIO ADMINISTRADOR)
+@else
+@endif
+</h2>
+</div> -->
+
  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
      @csrf
-
  </form>
-</a></h3>
 
-@if (Auth::user()->isAdmin)
-<h3>SOS ADMIN</h1>
-@else
-<!-- <h3>NO SOS ADMIN</h3> -->
-@endif
+ <div class="row">
+   <div class="col-12 col-md-6 col-lg-12">
+     <div class="card bg-dark"   style="
+         text-align: center;
+         max-width: 50rem;
+         margin: auto;
+         padding-left: 0px;
+         padding-top: 10px;
+         ">
+         <h4>Datos Registrados</h4>
+     <div class="card-body">
+         <p style="color: white; display:inline-block;">NOMBRE: </p>
+         <p class="" style="color: orange; display:inline-block;">{{Auth::User()->name}}</p> <br>
+         <p style="color: white; display:inline-block;">APELLIDO: </p>
+         <p class="" style="color: orange; display:inline-block;">{{Auth::User()->last_name}}</p> <br>
+         <p style="color: white; display:inline-block;">EMAIL : </p>
+         <p class="" style="color: orange; display:inline-block;">{{Auth::User()->email}}</p> <br>
+         <p style="color: white; display:inline-block;">AVATAR: </p>
+         <p class="" style="color: orange; display:inline-block;"><img src="/storage/{{Auth::User()->avatar}}" alt="" class="avatar"></p> <br>
+         <a href="index" class="btn btn-primary">Ir al Home</a>
+         <a class="btn btn-danger" href=href="{{ route('logout') }}"
+             onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();"
+              {{ __('Logout') }}
+        >Cerrar Sesion</a>
+       </div>
+     </div>
+   </div>
+  </div>
 
-<div class="alert alert-success alert-dismissible fade show" id="cartel" role="alert" style=" margin: auto;">
-  <strong>El loggeo se ha completado de forma exitosa! <br>
-          Gracias por confiar en Negocios Informaticos SA.</strong>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
 
 
 @endsection

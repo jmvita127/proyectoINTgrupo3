@@ -68,7 +68,7 @@
       </div>
 
 
-        <button type="submit" class="btn btn-success">Crear Producto</button>
+        <button onclick="alert('El producto fue creado correctamente. Volviendo a seccion Gaming.')"  type="submit" class="btn btn-success">Crear Producto</button>
 
       </form>
     </div>

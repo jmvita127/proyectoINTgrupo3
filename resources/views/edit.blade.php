@@ -64,7 +64,7 @@
     </span>
    @enderror <br>
    </div>
-     <button type="submit" class="btn btn-success">Actualizar Producto</button>
+     <button onclick="alert('El producto {{old('name', $product->name)}} fue actualizado correctamente. Volviendo a seccion Gaming.')" type="submit" name="button" class="btn btn-danger">Actualizar Producto</button>
 
 
 

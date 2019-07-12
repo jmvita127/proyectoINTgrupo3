@@ -24,7 +24,7 @@ class CartController extends Controller
     ['quantity'=>'1', 'date_purchase' => date('Y-m-d')]
   );
 
-    return redirect ('carrito');
+    return redirect ('products');
 
   }
 

@@ -8,7 +8,8 @@
    @csrf
 <div class="prueba1">Vas a borrar:</h2> <h4>{{old('name', $product->name)}}</h4>
  <br>
-     <button type="submit" name="button" class="btn btn-danger">Eliminar Producto</button>
+     <button onclick="alert('El producto {{old('name', $product->name)}} fue eliminado correctamente. Volviendo a Seccion Gaming.')" type="submit" name="button" class="btn btn-danger">Eliminar Producto</button>
+
  </form>
 
 <br>
