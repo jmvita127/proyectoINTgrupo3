@@ -7,7 +7,7 @@
 
  @foreach($products as $product)
 
-   <form class="formulariogrande" action="/carrito/eliminarCarrito" method="post" enctype="multipart/form-data">
+   <form class="formulariogrande" id="formCart" action="/carrito/eliminarCarrito" method="post" enctype="multipart/form-data">
      @csrf
      <div class="contenedor">
 
@@ -20,7 +20,6 @@
 
            <h4 class="media-heading" style="font-size:2em;color:darkorange;">{{$product->name}}</h4>
 
-           <p class="card-text" style="font-size:1em;color:mintcream">{{$product->description}}</p>
 
            <p style="font-size:1.6em;color:mintcream">Precio: ${{$product->price}}</p>
 
@@ -31,12 +30,14 @@
        </div>
        <br>
 
+          <input type="hidden" id="user_id" name="id" value="{{Auth::user()->id}}">
+          <button type="button" id="delete" class="btn btn-dark" name="id" value="{{$product->id}}">Eliminar del Carrito</button>
 
-       <button type="submit" class="btn btn-dark" name="product_id" value="{{$product->id}}">Eliminar del Carrito</button>
+
      </div>
 
 
    </form>
-
  @endforeach
+ <script type="text/javascript" src="/js/cart/cart.js"></script>
 @endsection

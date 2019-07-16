@@ -20,7 +20,6 @@ Route::get('/carrito/', 'CartController@showCart')->middleware('auth');
 
 Route::post('/carrito/', 'CartController@addToCart')->middleware('auth');
 
-Route::post('/carrito/eliminarCarrito', 'CartController@deleteToCart')->middleware('auth');
 
 // RUTAS CON NAME //
 

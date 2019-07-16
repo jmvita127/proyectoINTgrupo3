@@ -39,13 +39,13 @@ class CartController extends Controller
 
 }
 
-public function deleteToCart( Request $request){
+public function deleteToCart($product_id, $user_id){
+  
+  $productUser = Cart::where('product_id',$product_id)->where('user_id', $user_id)->first();
 
-  $user =Auth::user();
+  $productUser->delete();
 
-  $user->carrito()->detach($request->product_id,['quantity'=>1]);
-
-  return redirect('/carrito');
+  return response()->json(['eliminado' => true], 200);
 }
 
 }

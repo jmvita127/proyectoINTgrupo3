@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/buscarEmail', 'ApiUserController@getUser');
+
+Route::get('/carrito/eliminarCarrito/{id_product}/{id_user}', 'CartController@deleteToCart');
