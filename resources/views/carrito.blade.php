@@ -4,11 +4,10 @@
   <h2 class="form-title">M<span>i</span> C<span>arrito</span> </h2>
 </div>
 
-
+<div>
  @foreach($products as $product)
 
-   <form class="formulariogrande" id="formCart" action="/carrito/eliminarCarrito" method="post" enctype="multipart/form-data">
-     @csrf
+
      <div class="contenedor">
 
 
@@ -30,14 +29,13 @@
        </div>
        <br>
 
-          <input type="hidden" id="user_id" name="id" value="{{Auth::user()->id}}">
-          <button type="button" id="delete" class="btn btn-dark" name="id" value="{{$product->id}}">Eliminar del Carrito</button>
+        <input type="hidden" id="user_id" name="id" value="{{Auth::user()->id}}">
+        <button type="button" id="delete" class="btn btn-dark" name="id" value="{{$product->id}}">Eliminar del Carrito</button>
 
 
      </div>
 
-
-   </form>
  @endforeach
+</div>
  <script type="text/javascript" src="/js/cart/cart.js"></script>
 @endsection

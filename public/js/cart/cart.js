@@ -1,15 +1,17 @@
 window.onload = function(){
   var eliminarBotones =  document.querySelectorAll('#delete');
-  var form = document.querySelector('#formCart');
+
   var contenedor = document.querySelector('.contenedor');
   console.log(eliminarBotones);
 
     for (eliminarBoton of eliminarBotones ) {
     eliminarBoton.onclick = function(){
+      var boton = this;
+      var form = document.querySelector('#formCart');
       //1. capturar que producto es
       var id = this.value;
       var user_id = document.getElementById('user_id').value;
-      console.log(id);
+      console.log(id, user_id);
       //2. enviar fetch para eliminar de la bd
       fetch('http://localhost:8000/api/carrito/eliminarCarrito/'+id+'/'+user_id)
 
@@ -18,8 +20,9 @@ window.onload = function(){
       })
 
       .then(function(data){
-        console.log(data);
-      )}
+        var eliminar = boton.parentNode
+        eliminar.parentNode.removeChild(eliminar);
+      })
 
       .catch(function(error){
         console.log(error);
