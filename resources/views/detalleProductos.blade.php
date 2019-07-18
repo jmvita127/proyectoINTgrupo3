@@ -19,7 +19,7 @@
           <div class="card-body">
             <h5 class="card-title" style="font-family: 'Orbitron', sans-serif;
             font-weight: bold;">{{old('name', $product->name)}}</h5>
-
+            <p class="" style="color: #ff851b; display:inline-block;"><img src="/storage/{{$product->imagen}}" alt="" class="" style="max-width: 200px; max-height: 200px;"></p> <br>
             <p class="card-text">{{old('description', $product->description)}}</p>
 
             @guest
