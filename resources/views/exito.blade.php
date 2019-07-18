@@ -44,7 +44,9 @@
          <p class="" style="color: orange; display:inline-block;">{{Auth::User()->email}}</p> <br>
          <p style="color: white; display:inline-block;">AVATAR: </p>
          <p class="" style="color: orange; display:inline-block;"><img src="/storage/{{Auth::User()->avatar}}" alt="" class="avatar"></p> <br>
-        
+
+         
+
          <a href="index" class="btn btn-primary">Ir al Home</a>
          <a class="btn btn-danger" href=href="{{ route('logout') }}"
              onclick="event.preventDefault();
@@ -55,6 +57,9 @@
      </div>
    </div>
   </div>
+
+
+
 
 
 <script type="text/javascript" src="/js/Products/createProduct.js"></script>

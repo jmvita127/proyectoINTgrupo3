@@ -54,17 +54,18 @@
     @enderror <br>
     </div>
 
+    <p class="" style="color: #ff851b; display:inline-block;">IMAGEN ACTUAL <img src="/storage/{{$product->imagen}}" alt="" class="avatar"></p> <br>
 
-    <label for="imagen">IMAGEN</label>
+    <label for="imagen">CAMBIAR IMAGEN</label>
     <div class="">
-    <input type="file" name="imagen" id="imagen" value="<img src="{{old('imagen', $product->imagen)}}" alt=""><br>
+    <input type="file" name="imagen" id="imagen" value='' alt=""><br>
     @error('imagen')
     <span class="alert alert-danger">
       <strong>{{ $message }}</strong>
     </span>
    @enderror <br>
    </div>
-     <button onclick="alert('El producto {{old('name', $product->name)}} fue actualizado correctamente. Volviendo a seccion Gaming.')" type="submit" name="button" class="btn btn-danger">Actualizar Producto</button>
+     <button onclick="alert('El producto {{old('name', $product->name)}} fue actualizado correctamente. Volviendo a seccion Gaming.')" type="submit" name="button" class="btn btn-success">Actualizar Producto</button>
 
 
 

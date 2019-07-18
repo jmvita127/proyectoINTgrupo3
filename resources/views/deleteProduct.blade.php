@@ -7,6 +7,7 @@
   <form class="formulariogrande" action="" method="post" enctype="multipart/form-data">
    @csrf
 <div class="prueba1">Vas a borrar:</h2> <h4>{{old('name', $product->name)}}</h4>
+  <p class="" style="color: #ff851b; display:inline-block;"><img src="/storage/{{$product->imagen}}" alt="" class="avatar"></p> <br>
  <br>
      <button onclick="alert('El producto {{old('name', $product->name)}} fue eliminado correctamente. Volviendo a Seccion Gaming.')" type="submit" name="button" class="btn btn-danger">Eliminar Producto</button>
 

@@ -24,7 +24,7 @@ class CartController extends Controller
     ['quantity'=>'1', 'date_purchase' => date('Y-m-d')]
   );
 
-    return redirect ('products');
+    return redirect ('/');
 
   }
 
@@ -40,7 +40,7 @@ class CartController extends Controller
 }
 
 public function deleteToCart($product_id, $user_id){
-  
+
   $productUser = Cart::where('product_id',$product_id)->where('user_id', $user_id)->first();
 
   $productUser->delete();

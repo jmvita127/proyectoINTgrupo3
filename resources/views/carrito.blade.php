@@ -17,7 +17,7 @@
 
         <div class="media block-update-card">
           <a class="pull-left" href="#">
-            <img class="media-object update-card-MDimentions" src="/storage/{{$product->imagen}}" style="width:200px;height:150px;margin:auto;padding:10px;;"alt="...">
+            <img class="media-object update-card-MDimentions" src="/storage/{{$product->imagen}}" style="width:40%;height:150px;margin:auto;padding:10px;;"alt="...">
           </a>
           <div class="media-body update-card-body" style="text-align:center;line-height:40px;">
 
@@ -56,7 +56,7 @@
 
 
 
-<div class="contenedor" style="width:500px;height:auto;margin:auto;padding:auto">
+<div class="contenedor" style="width:100;height:auto;margin:auto;padding:auto">
    <form class="" action="" method="post">
     <div class="media block-update-card">
       <div class="media-body update-card-body" style="text-align:center;line-height:40px;">
@@ -68,7 +68,7 @@
         {{-- <p style="font-size:1.6em;color:mintcream">Cantidad de Productos: {{$sumaProductos}}</p> --}}
 
         <input type="button" value="Actualizar" class="btn btn-primary" onclick="location.reload()"/>
-        <button type="button" name="button" class="btn btn-success">Finalizar Compra</button>
+        <button onclick="alert('💰💸 ERROR: FALTA CONTRATAR A MERCADO PAGO 💸💰')" type="button" name="button" class="btn btn-success">Finalizar Compra</button>
 
 
       </div>

@@ -57,10 +57,10 @@ Route::post('/product/detalleProductos/{id}', 'CartController@addToCart');
 
 //porque nos estamos confundiendo mucho entre index y home:
 
-Route::get('/home', 'IndexController@home');
+Route::get('/', 'IndexController@home');
 
 
 // RUTEO HOME LARAVEL
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });

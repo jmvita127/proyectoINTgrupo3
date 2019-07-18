@@ -27,7 +27,8 @@
             @endguest
             <br>
 
-            <a href="/products" class="btn btn-info">Volver Atras</a>
+            <a href="/" class="btn btn-info">Volver al Home</a>
+            <a href="/products" class="btn btn-info">Ir a Productos</a>
 
           </div>
 

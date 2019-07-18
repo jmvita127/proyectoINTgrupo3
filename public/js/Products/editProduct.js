@@ -1,4 +1,4 @@
-var validarNumero = /^([0-9])*$/;
+var validarNumero = /^([0-9,])*$/;
 var validarLetras = /^[a-zA-Z0-9 ._-]+$/;
 var imagen = /.[jpeg|jpg|png]$/;
 
@@ -63,9 +63,11 @@ window.onload = function()
             {
                 event.preventDefault();
             }
-            if (elemento.type == 'file' && !imagen.test(elemento.value)){
+
+            if (elemento.type == 'file' &&  elemento.value != ''  && !imagen.test(elemento.value)){
                 pintarError(elemento, 'La extension de la imagen tiene que ser .JPG,.JPEG,.PNG.')
                 event.preventDefault();
+
             }
             if (elemento.name == 'price' &&  !validarNumero.test(elemento.value))
             {

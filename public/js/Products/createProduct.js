@@ -1,4 +1,4 @@
-var validarNumero = /^([0-9])*$/;
+var validarNumero = /^([0-9,])*$/;
 var validarLetras = /^[a-zA-Z0-9 ._-]+$/;
 var imagen = /.[jpeg|jpg|png]$/;
 

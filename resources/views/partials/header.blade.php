@@ -28,13 +28,10 @@
           <li class="nav-item active">
             <a class="nav-link" href="/index" style="color:orange;">HOME <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:orange;">PRODUCTOS</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/products" style="color:orange;">EQUIPOS</a>
-              <a class="dropdown-item" href="/products" style="color:orange;">CONSOLAS</a>
-            </div>
+          <li class="nav-item active">
+            <a class="nav-link" href="/products" style="color:orange;">PRODUCTOS<span class="sr-only">(current)</span></a>
           </li>
+
           <li class="nav-item active">
             <a class="nav-link" href="/quienesSomos" style="color:orange;">¿QUIENES SOMOS? <span class="sr-only">(current)</span></a>
         </li>

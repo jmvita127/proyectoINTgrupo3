@@ -36,10 +36,10 @@ class ProductController extends Controller
      $this->validate($request,
        [
          'name'=>'required',
-         'price' => 'required|numeric',
+         'price' => 'required|between:0,99.99',
          'stock' => 'required|numeric',
          'description' => 'required',
-         'imagen' => 'required|image',
+         'imagen' => 'nullable|image',
        ],
        [
          'name.required' => 'El nombre es obligatorio',
@@ -50,11 +50,8 @@ class ProductController extends Controller
          'stock.numeric' => 'Ingrese solo numeros',
          'description.required' => 'Completar descripcion',
          'imagen.image' => 'Extension no valida como Imagen',
-         'imagen.required' => 'La imagen es obligatoria',
+         'imagen' => 'La imagen es obligatoria',
        ]);
-
-       $path= $request->file('imagen')->store('public');
-       $imagen= basename($path);
 
 
        $productoAEditar = Product::find($id);
@@ -63,7 +60,16 @@ class ProductController extends Controller
         $productoAEditar->price = $request->price;
         $productoAEditar->stock = $request->stock;
         $productoAEditar->description = $request->description;
-        $productoAEditar->imagen = $imagen;
+
+
+       if ($request->file('imagen')) {
+         $path= $request->file('imagen')->store('public');
+         $imagen= basename($path);
+         $productoAEditar->imagen = $imagen;
+       }
+
+
+
 
         //lo mando a guardar
         $productoAEditar->save();
