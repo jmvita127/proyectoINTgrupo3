@@ -22,6 +22,7 @@ window.onload = function(){
       .then(function(data){
         var eliminar = boton.parentNode
         eliminar.parentNode.removeChild(eliminar);
+        alert("Haga click en el boton actualizar para refrescar el total")
       })
 
       .catch(function(error){

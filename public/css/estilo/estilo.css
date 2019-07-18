@@ -6,6 +6,8 @@
 }
 
 
+
+
 .productos {
   color: orange;
   display: block;
@@ -83,7 +85,7 @@ h1 {
 nav {
   display: inline-block;
   margin: auto;
-  padding: 0;
+  padding: auto;
   background-color: Red;
 }
 
@@ -693,11 +695,20 @@ text-align: center;
 }
 
 
-  @media (max-width:576px) {
+  @media (max-width:590px) {
 
     .bienvenida {
       font-size: 1.5em;
       margin: auto;
+    }
+
+    #buscador2 {
+      width:200px;
+    }
+
+    #boton_buscar {
+      margin-top: 4px;
+      margin-left: 0px;
     }
 
     #cartel {
@@ -735,7 +746,7 @@ text-align: center;
    }
 
    .logo {
-     width: 70%;
+     width: auto;
      margin: auto;
    }
 
@@ -877,7 +888,9 @@ text-align: center;
 
 }
 
-  @media (min-width:576px) and (max-width:1000px) {
+  @media (min-width:590px) and (max-width:1000px) {
+
+
 
     #cartel {
         width: 68%;
@@ -895,7 +908,7 @@ text-align: center;
     }
 
     .logo {
-      width: 70%;
+      width: auto;
       margin: auto;
     }
 

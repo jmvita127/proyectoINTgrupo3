@@ -63,7 +63,7 @@
             <form class="" action="/carrito" method="post">
               @csrf
               <input type="hidden" name="product_id" value="{{$product->id}}">
-              <button onclick= "alert('{{$product->name}} fue agregado al carrito exitosamente')" type="submit" class="btn btn-success" style="margin-top:5px"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></button>
+              <button onclick= "alert('{{$product->name}} FUE AGREGADO AL CARRITO EXITOSAMENTE')" type="submit" class="btn btn-success" style="margin-top:5px"><img class="carrito" src="/imagenes/carrito.png" alt="" witdh="30" height="30"></button>
               </form>
 
 

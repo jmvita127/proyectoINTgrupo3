@@ -41,8 +41,8 @@
 
         </ul>
         <form action="/products" class="form-inline my-2 my-lg-0" id="buscador" method="get">
-          <input class="form-control mr-sm-2" type="text" name="name" placeholder="Buscar Producto" aria-label="Search" style="width: 380px;">
-          <button type="submit" class="btn btn-primary" style="margin: auto;">Buscar</button>
+          <input id="buscador2" class="form-control mr-sm-2" type="text" name="name" placeholder="Buscar Producto" aria-label="Search" style="width: 350px;">
+          <button id="boton_buscar" type="submit" class="btn btn-primary" >Buscar</button>
         </form>
 
 

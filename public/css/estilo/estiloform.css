@@ -7,6 +7,17 @@ body {
   background-image: url(/imagenes/fondoform.jpg);
   background-size:cover;
 }
+    /* .contenedor_card {
+      font-weight: normal;
+      font-family: 'Orbitron';
+      text-align: center;
+      color: #ff851b;
+      width:1000px;
+      height:230px;
+      margin:0;
+      padding:auto;
+    } */
+
 
 .contenedor, .form-header  {
   font-weight: normal;

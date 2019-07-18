@@ -80,15 +80,16 @@
   </article>
     <div class="row">
 @foreach ($products as $product)
+  
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card text-white bg-dark mb-3"
           style="
           text-align: center;
           margin:auto;
-          padding: auto;
+          padding:auto;
           ">
           <a name="quienes">
-            <img src="/storage/{{$product->imagen}}" class="card-img-top" alt="...">
+            <img src="/storage/{{$product->imagen}}" style="margin:auto" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title" style="font-family: 'Orbitron', sans-serif;
               font-weight: bold;">{{$product->name}}</h5>
@@ -98,7 +99,7 @@
               @auth
                 @if (Auth::user()->isAdmin)
                   <a href="/product/edit/{{$product->id}}" class="btn btn-primary">Editar Producto</a>
-                  <a href="/deleteProduct/{{$product->id}}" class="btn btn-danger">Eliminar</a>
+                  <a href="/deleteProduct/{{$product->id}}" style="margin-top:4px;" class="btn btn-danger">Eliminar</a>
                 @endif
                 <form class="" action="/carrito" method="post">
                   @csrf

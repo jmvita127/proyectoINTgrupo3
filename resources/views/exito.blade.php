@@ -26,15 +26,15 @@
  </form>
 
  <div class="row">
-   <div class="col-12 col-md-6 col-lg-12">
+   <div class="col-12 col-md-12 col-lg-12">
      <div class="card bg-dark"   style="
          text-align: center;
-         max-width: 50rem;
+         max-width: 30rem;
          margin: auto;
          padding-left: 0px;
          padding-top: 10px;
          ">
-         <h4>Datos Registrados</h4>
+         <h4 style="color: cadetblue;font-size: 2em;font-weight: bolder;">Datos Registrados</h4>
      <div class="card-body">
          <p style="color: white; display:inline-block;">NOMBRE: </p>
          <p class="" style="color: orange; display:inline-block;">{{Auth::User()->name}}</p> <br>
@@ -44,6 +44,7 @@
          <p class="" style="color: orange; display:inline-block;">{{Auth::User()->email}}</p> <br>
          <p style="color: white; display:inline-block;">AVATAR: </p>
          <p class="" style="color: orange; display:inline-block;"><img src="/storage/{{Auth::User()->avatar}}" alt="" class="avatar"></p> <br>
+        
          <a href="index" class="btn btn-primary">Ir al Home</a>
          <a class="btn btn-danger" href=href="{{ route('logout') }}"
              onclick="event.preventDefault();
@@ -56,5 +57,5 @@
   </div>
 
 
-
+<script type="text/javascript" src="/js/Products/createProduct.js"></script>
 @endsection
