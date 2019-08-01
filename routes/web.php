@@ -33,6 +33,9 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 
 Route::post('cerrarSesion', 'Auth\LoginController@logout')->name('logout');
 
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
 // RUTAS GENERALES //
 
 Route::get('/products', 'ProductController@index');

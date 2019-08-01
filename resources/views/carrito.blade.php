@@ -13,11 +13,11 @@
   <div>
     @foreach($products as $product)
 
-      <div class="contenedor" style="width:1000px;height:auto;margin:auto;padding:auto">
+      <div class="contenedor" style="width:100%;height:auto;margin:auto;padding:auto">
 
         <div class="media block-update-card">
           <a class="pull-left" href="#">
-            <img class="media-object update-card-MDimentions" src="/storage/{{$product->imagen}}" style="width:40%;height:150px;margin:auto;padding:10px;;"alt="...">
+            <img class="media-object update-card-MDimentions" src="/storage/{{$product->imagen}}" style="width:200px;height:150px;margin:auto;padding:10px;;"alt="...">
           </a>
           <div class="media-body update-card-body" style="text-align:center;line-height:40px;">
 
@@ -31,7 +31,7 @@
         </div>
 
         <input type="hidden" id="user_id" name="id" value="{{Auth::user()->id}}">
-        <button type="button" id="delete" class="btn btn-dark" name="id" value="{{$product->id}}">Eliminar del Carrito</button>
+        <button type="button" id="delete" class="btn btn-danger" name="id" value="{{$product->id}}">Eliminar del Carrito</button>
 
 
       </div>

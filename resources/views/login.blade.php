@@ -67,6 +67,8 @@
       ¿No tenés usuario? <a href="register">¡Registrate!</a>
     </div>
 
+    <a href="/login/facebook">CONTINUAR CON FACEBOOK</a>
+
 
   </div>
   </form>

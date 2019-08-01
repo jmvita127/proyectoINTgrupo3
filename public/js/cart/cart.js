@@ -13,7 +13,7 @@ window.onload = function(){
       var user_id = document.getElementById('user_id').value;
       console.log(id, user_id);
       //2. enviar fetch para eliminar de la bd
-      fetch('http://localhost:8000/api/carrito/eliminarCarrito/'+id+'/'+user_id)
+      fetch('http://nisa.dhalumnos.com/api/carrito/eliminarCarrito/'+id+'/'+user_id)
 
       .then(function(response){
         return response.json();
